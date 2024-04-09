@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'rule_mining',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://mouadelotmani:Iic0x7uHfU5n25hP@rmcluster.fyjtt5v.mongodb.net/?retryWrites=true&w=majority&appName=rmcluster',
+            'host': 'mongodb+srv://bentaouiloussama:BThkmW5e8OAPksdD@rmcluster.46rllnu.mongodb.net/rule_mining',
         }
     }
 }
