@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class DecisionTable(models.Model):
+    extracted_decision_table = models.TextField()
+
+    def __str__(self):
+        return self.extracted_decision_table
