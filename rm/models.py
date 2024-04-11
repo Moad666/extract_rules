@@ -18,3 +18,14 @@ class DecisionTable(models.Model):
 
     def __str__(self):
         return self.extracted_decision_table
+    
+    
+    
+class ExtractedRule(models.Model):
+    file_name = models.CharField(max_length=255)
+    tag_data = models.JSONField()
+
+
+class DecisionTable1(models.Model):
+    file_name = models.CharField(max_length=255)
+    tag_data = models.JSONField()
