@@ -5,7 +5,7 @@ import re
 import zipfile
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
-from .models import ActionRules, DecisionTable, DecisionTable1, ExtractedRule
+from .models import ActionRules, DecisionTable, DecisionTable1, ExtractedRule, Queries
 from rest_framework.decorators import api_view, permission_classes
 import shutil
 import xml.etree.ElementTree as ET
@@ -151,7 +151,7 @@ import json
 
 
 
-
+# Function to extract data from XML files with a ".brl" extension
 @api_view(['POST'])
 def upload_workspace(request):
     if request.method == 'POST' and request.FILES.get('zip_file'):
@@ -219,6 +219,8 @@ def upload_workspace(request):
 
 
 
+# Function to extract data from XML files with a ".brl" extension
+# this function is to extract the data from the xml file as .brl file action rules
 def extract_brl_files(folder_path):
     brl_data_list = []  
 
@@ -257,9 +259,10 @@ def extract_brl_files(folder_path):
     return brl_data_list
 
 
-
+# Function to extract data from XML files with a ".dta" extension
+# this function is to extract the data from the xml file as .brl file decision tables
 def extract_dta_files(folder_path):
-    dta_data_list = []  
+    querie_data_list = []  
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
@@ -291,12 +294,12 @@ def extract_dta_files(folder_path):
                 extract_xml_data(root_element, tag_data)
 
                 data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
-                dta_data_list.append(data_dict)
+                querie_data_list.append(data_dict)
     
-    return dta_data_list
+    return querie_data_list
 
 
-
+# Function to extract data from XML files with a ".dta" extension
 @api_view(['POST'])
 def upload_workspace_DTA(request):
     if request.method == 'POST' and request.FILES.get('zip_file'):
@@ -308,9 +311,9 @@ def upload_workspace_DTA(request):
         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
             zip_ref.extractall(temp_dir)
         
-        dta_data_list = extract_dta_files(temp_dir)  
+        querie_data_list = extract_dta_files(temp_dir)  
         
-        for data_dict in dta_data_list:
+        for data_dict in querie_data_list:
              rule = DecisionTable1.objects.create(
                 file_name=data_dict['file_name'],
                 tag_data=data_dict['tag_data']
@@ -327,6 +330,83 @@ def upload_workspace_DTA(request):
         os.rmdir(temp_dir)
 
 
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': dta_data_list})
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': querie_data_list})
+    
+    return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
+# Function to extract data from XML files with a ".qry" extension
+# this function is to extract the data from the xml file as .brl file queries
+def extract_qry_files(folder_path):
+    qry_data_list = []  
+
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith('.qry'):
+                file_path = os.path.join(root, file)
+                full_file_name = os.path.relpath(file_path, start=folder_path)
+
+                tag_data = {}
+
+                # Function to recursively extract data from XML elements
+                def extract_xml_data(element, data):
+                    for child in element:
+                        tag_name = child.tag.split('}')[-1]
+                        if child.text:
+                            tag_content = html.unescape(child.text.strip())
+                        else:
+                            tag_content = ''
+
+                        data[tag_name] = tag_content
+
+                        if len(list(child)) > 0:
+                            data[tag_name] = {}
+                            extract_xml_data(child, data[tag_name])
+
+                try:
+                    tree = ET.parse(file_path)
+                    root_element = tree.getroot()
+                    # Extracting data from the root element
+                    extract_xml_data(root_element, tag_data)
+
+                    data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
+                    qry_data_list.append(data_dict)
+                except Exception as e:
+                    print(f"Error processing file {file_path}: {e}")
+
+    return qry_data_list
+
+# Function to upload and extract queries from a zip file containing XML files with a ".qry" extension
+@api_view(['POST'])
+def upload_workspace_Queries(request):
+    if request.method == 'POST' and request.FILES.get('zip_file'):
+        zip_file = request.FILES['zip_file']
+        
+        temp_dir = 'temp_extracted_folder'
+        os.makedirs(temp_dir, exist_ok=True)
+        
+        with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+            zip_ref.extractall(temp_dir)
+        
+        querie_data_list = extract_qry_files(temp_dir)  
+        
+        for data_dict in querie_data_list:
+             querie = Queries.objects.create(
+                file_name=data_dict['file_name'],
+                tag_data=data_dict['tag_data']
+            )
+           
+        
+        for item in os.listdir(temp_dir):
+            item_path = os.path.join(temp_dir, item)
+            if os.path.isfile(item_path):
+                os.remove(item_path)
+            else:
+                shutil.rmtree(item_path)
+
+        os.rmdir(temp_dir)
+
+
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': querie_data_list})
     
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})

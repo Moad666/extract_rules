@@ -29,3 +29,8 @@ class ExtractedRule(models.Model):
 class DecisionTable1(models.Model):
     file_name = models.CharField(max_length=255)
     tag_data = models.JSONField()
+    
+        
+class Queries(models.Model):
+    file_name = models.CharField(max_length=255)
+    tag_data = models.JSONField()
