@@ -4,13 +4,14 @@ import os
 import re
 import zipfile
 from django.http import JsonResponse
-from rest_framework.decorators import api_view
-from .models import ActionRules, DecisionTable, DecisionTable1, ExtractedRule, Queries
+from rm.serializers import CategorySerializer
+from .models import ActionRule, ActionRules, Category, DecisionTable, DecisionTable1, ExtractedRule, Queries
 from rest_framework.decorators import api_view, permission_classes
 import shutil
 import xml.etree.ElementTree as ET
 import json
-
+from rest_framework import status
+from rest_framework.response import Response
 
 # def extract_brl_files(folder_path):
 #     brl_data_dict = {}  # Dictionary to store extracted data
@@ -152,39 +153,39 @@ import json
 
 
 # Function to extract data from XML files with a ".brl" extension
-@api_view(['POST'])
-def upload_workspace(request):
-    if request.method == 'POST' and request.FILES.get('zip_file'):
-        zip_file = request.FILES['zip_file']
+# @api_view(['POST'])
+# def upload_workspace(request):
+#     if request.method == 'POST' and request.FILES.get('zip_file'):
+#         zip_file = request.FILES['zip_file']
         
-        temp_dir = 'temp_extracted_folder'
-        os.makedirs(temp_dir, exist_ok=True)
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
         
-        with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-            zip_ref.extractall(temp_dir)
+#         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#             zip_ref.extractall(temp_dir)
         
-        brl_data_list = extract_brl_files(temp_dir)  
+#         brl_data_list = extract_brl_files(temp_dir)  
         
-        for data_dict in brl_data_list:
-             rule = ExtractedRule.objects.create(
-                file_name=data_dict['file_name'],
-                tag_data=data_dict['tag_data']
-            )
+#         for data_dict in brl_data_list:
+#              rule = ExtractedRule.objects.create(
+#                 file_name=data_dict['file_name'],
+#                 tag_data=data_dict['tag_data']
+#             )
            
         
-        for item in os.listdir(temp_dir):
-            item_path = os.path.join(temp_dir, item)
-            if os.path.isfile(item_path):
-                os.remove(item_path)
-            else:
-                shutil.rmtree(item_path)
+#         for item in os.listdir(temp_dir):
+#             item_path = os.path.join(temp_dir, item)
+#             if os.path.isfile(item_path):
+#                 os.remove(item_path)
+#             else:
+#                 shutil.rmtree(item_path)
 
-        os.rmdir(temp_dir)
+#         os.rmdir(temp_dir)
 
 
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': brl_data_list})
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': brl_data_list})
     
-    return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 
 # test function to extract the data from the xml file as .brl file
@@ -221,8 +222,204 @@ def upload_workspace(request):
 
 # Function to extract data from XML files with a ".brl" extension
 # this function is to extract the data from the xml file as .brl file action rules
+# def extract_brl_files(folder_path):
+#     brl_data_list = []  
+
+#     for root, dirs, files in os.walk(folder_path):
+#         for file in files:
+#             if file.endswith('.brl'):
+#                 file_path = os.path.join(root, file)
+#                 full_file_name = os.path.relpath(file_path, start=folder_path)
+
+#                 tree = ET.parse(file_path)
+#                 root_element = tree.getroot()
+
+#                 tag_data = {}
+
+#                 # Function to recursively extract data from XML elements
+#                 def extract_xml_data(element, data):
+#                     for child in element:
+#                         tag_name = child.tag.split('}')[-1]
+#                         if child.text:
+#                             tag_content = html.unescape(child.text.strip())
+#                         else:
+#                             tag_content = ''
+
+#                         data[tag_name] = tag_content
+
+#                         if len(list(child)) > 0:
+#                             data[tag_name] = {}
+#                             extract_xml_data(child, data[tag_name])
+
+#                 # Extracting data from the root element
+#                 extract_xml_data(root_element, tag_data)
+
+#                 data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
+#                 brl_data_list.append(data_dict)
+    
+#     return brl_data_list
+
+
+# Function to extract data from XML files with a ".dta" extension
+# this function is to extract the data from the xml file as .brl file decision tables
+# def extract_dta_files(folder_path):
+#     querie_data_list = []  
+
+#     for root, dirs, files in os.walk(folder_path):
+#         for file in files:
+#             if file.endswith('.dta'):
+#                 file_path = os.path.join(root, file)
+#                 full_file_name = os.path.relpath(file_path, start=folder_path)
+
+#                 tree = ET.parse(file_path)
+#                 root_element = tree.getroot()
+
+#                 tag_data = {}
+
+#                 # Function to recursively extract data from XML elements
+#                 def extract_xml_data(element, data):
+#                     for child in element:
+#                         tag_name = child.tag.split('}')[-1]
+#                         if child.text:
+#                             tag_content = html.unescape(child.text.strip())
+#                         else:
+#                             tag_content = ''
+
+#                         data[tag_name] = tag_content
+
+#                         if len(list(child)) > 0:
+#                             data[tag_name] = {}
+#                             extract_xml_data(child, data[tag_name])
+
+#                 # Extracting data from the root element
+#                 extract_xml_data(root_element, tag_data)
+
+#                 data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
+#                 querie_data_list.append(data_dict)
+    
+#     return querie_data_list
+
+
+# # Function to extract data from XML files with a ".dta" extension
+# @api_view(['POST'])
+# def upload_workspace_DTA(request):
+#     if request.method == 'POST' and request.FILES.get('zip_file'):
+#         zip_file = request.FILES['zip_file']
+        
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
+        
+#         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#             zip_ref.extractall(temp_dir)
+        
+#         querie_data_list = extract_dta_files(temp_dir)  
+        
+#         for data_dict in querie_data_list:
+#              rule = DecisionTable1.objects.create(
+#                 file_name=data_dict['file_name'],
+#                 tag_data=data_dict['tag_data']
+#             )
+           
+        
+#         for item in os.listdir(temp_dir):
+#             item_path = os.path.join(temp_dir, item)
+#             if os.path.isfile(item_path):
+#                 os.remove(item_path)
+#             else:
+#                 shutil.rmtree(item_path)
+
+#         os.rmdir(temp_dir)
+
+
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': querie_data_list})
+    
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
+# # Function to extract data from XML files with a ".qry" extension
+# # this function is to extract the data from the xml file as .brl file queries
+# def extract_qry_files(folder_path):
+#     qry_data_list = []  
+
+#     for root, dirs, files in os.walk(folder_path):
+#         for file in files:
+#             if file.endswith('.qry'):
+#                 file_path = os.path.join(root, file)
+#                 full_file_name = os.path.relpath(file_path, start=folder_path)
+
+#                 tag_data = {}
+
+#                 # Function to recursively extract data from XML elements
+#                 def extract_xml_data(element, data):
+#                     for child in element:
+#                         tag_name = child.tag.split('}')[-1]
+#                         if child.text:
+#                             tag_content = html.unescape(child.text.strip())
+#                         else:
+#                             tag_content = ''
+
+#                         data[tag_name] = tag_content
+
+#                         if len(list(child)) > 0:
+#                             data[tag_name] = {}
+#                             extract_xml_data(child, data[tag_name])
+
+#                 try:
+#                     tree = ET.parse(file_path)
+#                     root_element = tree.getroot()
+#                     # Extracting data from the root element
+#                     extract_xml_data(root_element, tag_data)
+
+#                     data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
+#                     qry_data_list.append(data_dict)
+#                 except Exception as e:
+#                     print(f"Error processing file {file_path}: {e}")
+
+#     return qry_data_list
+
+# Function to upload and extract queries from a zip file containing XML files with a ".qry" extension
+# @api_view(['POST'])
+# def upload_workspace_Queries(request):
+#     if request.method == 'POST' and request.FILES.get('zip_file'):
+#         zip_file = request.FILES['zip_file']
+        
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
+        
+#         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#             zip_ref.extractall(temp_dir)
+        
+#         querie_data_list = extract_qry_files(temp_dir)  
+        
+#         for data_dict in querie_data_list:
+#              querie = Queries.objects.create(
+#                 file_name=data_dict['file_name'],
+#                 tag_data=data_dict['tag_data']
+#             )
+           
+        
+#         for item in os.listdir(temp_dir):
+#             item_path = os.path.join(temp_dir, item)
+#             if os.path.isfile(item_path):
+#                 os.remove(item_path)
+#             else:
+#                 shutil.rmtree(item_path)
+
+#         os.rmdir(temp_dir)
+
+
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': querie_data_list})
+    
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
+
+
 def extract_brl_files(folder_path):
-    brl_data_list = []  
+    action_rule_list = []
+
+    # Fetch the "Action Rules" category
+    action_rules_category = Category.objects.get(name='Action Rules')
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
@@ -235,7 +432,6 @@ def extract_brl_files(folder_path):
 
                 tag_data = {}
 
-                # Function to recursively extract data from XML elements
                 def extract_xml_data(element, data):
                     for child in element:
                         tag_name = child.tag.split('}')[-1]
@@ -250,19 +446,56 @@ def extract_brl_files(folder_path):
                             data[tag_name] = {}
                             extract_xml_data(child, data[tag_name])
 
-                # Extracting data from the root element
                 extract_xml_data(root_element, tag_data)
 
-                data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
-                brl_data_list.append(data_dict)
+                action_rule_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category})
+
+    return action_rule_list
+
+@api_view(['POST'])
+def upload_workspace(request):
+    if request.method == 'POST' and request.FILES.get('zip_file'):
+        zip_file = request.FILES['zip_file']
+        
+        temp_dir = 'temp_extracted_folder'
+        os.makedirs(temp_dir, exist_ok=True)
+        
+        with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+            zip_ref.extractall(temp_dir)
+        
+        extracted_data_list = extract_brl_files(temp_dir)  
+
+        for extracted_data in extracted_data_list:
+            rule = ActionRule.objects.create(
+                file_name=extracted_data['file_name'],
+                tag_data=extracted_data['tag_data'],
+                category=extracted_data['category']
+            )
+        
+        # Clean up temporary directory
+        for item in os.listdir(temp_dir):
+            item_path = os.path.join(temp_dir, item)
+            if os.path.isfile(item_path):
+                os.remove(item_path)
+            else:
+                shutil.rmtree(item_path)
+
+        os.rmdir(temp_dir)
+
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
+
     
-    return brl_data_list
+    return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 
-# Function to extract data from XML files with a ".dta" extension
-# this function is to extract the data from the xml file as .brl file decision tables
+
+
+
 def extract_dta_files(folder_path):
-    querie_data_list = []  
+    decision_table_list = []
+
+    # Fetch  category
+    action_rules_category = Category.objects.get(name='Decision Tables')
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
@@ -275,7 +508,6 @@ def extract_dta_files(folder_path):
 
                 tag_data = {}
 
-                # Function to recursively extract data from XML elements
                 def extract_xml_data(element, data):
                     for child in element:
                         tag_name = child.tag.split('}')[-1]
@@ -290,16 +522,12 @@ def extract_dta_files(folder_path):
                             data[tag_name] = {}
                             extract_xml_data(child, data[tag_name])
 
-                # Extracting data from the root element
                 extract_xml_data(root_element, tag_data)
 
-                data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
-                querie_data_list.append(data_dict)
-    
-    return querie_data_list
+                decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category})
 
+    return decision_table_list
 
-# Function to extract data from XML files with a ".dta" extension
 @api_view(['POST'])
 def upload_workspace_DTA(request):
     if request.method == 'POST' and request.FILES.get('zip_file'):
@@ -311,15 +539,16 @@ def upload_workspace_DTA(request):
         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
             zip_ref.extractall(temp_dir)
         
-        querie_data_list = extract_dta_files(temp_dir)  
-        
-        for data_dict in querie_data_list:
-             rule = DecisionTable1.objects.create(
-                file_name=data_dict['file_name'],
-                tag_data=data_dict['tag_data']
+        extracted_data_list = extract_dta_files(temp_dir)  
+
+        for extracted_data in extracted_data_list:
+            rule = DecisionTable1.objects.create(
+                file_name=extracted_data['file_name'],
+                tag_data=extracted_data['tag_data'],
+                category=extracted_data['category']
             )
-           
         
+        # Clean up temporary directory
         for item in os.listdir(temp_dir):
             item_path = os.path.join(temp_dir, item)
             if os.path.isfile(item_path):
@@ -329,16 +558,18 @@ def upload_workspace_DTA(request):
 
         os.rmdir(temp_dir)
 
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
 
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': querie_data_list})
     
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 
-# Function to extract data from XML files with a ".qry" extension
-# this function is to extract the data from the xml file as .brl file queries
-def extract_qry_files(folder_path):
-    qry_data_list = []  
+
+def extract_queries_files(folder_path):
+    queries_list = []
+
+    # Fetch  category
+    action_rules_category = Category.objects.get(name='Queries')
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
@@ -346,9 +577,11 @@ def extract_qry_files(folder_path):
                 file_path = os.path.join(root, file)
                 full_file_name = os.path.relpath(file_path, start=folder_path)
 
+                tree = ET.parse(file_path)
+                root_element = tree.getroot()
+
                 tag_data = {}
 
-                # Function to recursively extract data from XML elements
                 def extract_xml_data(element, data):
                     for child in element:
                         tag_name = child.tag.split('}')[-1]
@@ -363,20 +596,13 @@ def extract_qry_files(folder_path):
                             data[tag_name] = {}
                             extract_xml_data(child, data[tag_name])
 
-                try:
-                    tree = ET.parse(file_path)
-                    root_element = tree.getroot()
-                    # Extracting data from the root element
-                    extract_xml_data(root_element, tag_data)
+                extract_xml_data(root_element, tag_data)
 
-                    data_dict = {'file_name': full_file_name, 'tag_data': tag_data}
-                    qry_data_list.append(data_dict)
-                except Exception as e:
-                    print(f"Error processing file {file_path}: {e}")
+                queries_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category})
 
-    return qry_data_list
+    return queries_list
 
-# Function to upload and extract queries from a zip file containing XML files with a ".qry" extension
+
 @api_view(['POST'])
 def upload_workspace_Queries(request):
     if request.method == 'POST' and request.FILES.get('zip_file'):
@@ -388,15 +614,16 @@ def upload_workspace_Queries(request):
         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
             zip_ref.extractall(temp_dir)
         
-        querie_data_list = extract_qry_files(temp_dir)  
-        
-        for data_dict in querie_data_list:
-             querie = Queries.objects.create(
-                file_name=data_dict['file_name'],
-                tag_data=data_dict['tag_data']
+        extracted_data_list = extract_queries_files(temp_dir)  
+
+        for extracted_data in extracted_data_list:
+            rule = Queries.objects.create(
+                file_name=extracted_data['file_name'],
+                tag_data=extracted_data['tag_data'],
+                category=extracted_data['category']
             )
-           
         
+        # Clean up temporary directory
         for item in os.listdir(temp_dir):
             item_path = os.path.join(temp_dir, item)
             if os.path.isfile(item_path):
@@ -406,7 +633,19 @@ def upload_workspace_Queries(request):
 
         os.rmdir(temp_dir)
 
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
 
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': querie_data_list})
     
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
+
+
+@api_view(['POST'])
+def create_category(request):
+    if request.method == 'POST':
+        serializer = CategorySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
