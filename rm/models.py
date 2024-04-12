@@ -1,7 +1,11 @@
 from django.db import models
 
-class DecisionTable(models.Model):
-    extracted_decision_table = models.TextField()
+class Category(models.Model):
+    name = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.extracted_decision_table
+
+class DecisionTable(models.Model):
+    file_name = models.CharField(max_length=255, default="file_zip")
+    tag_data = models.JSONField(default=dict)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=2)
+
