@@ -41,3 +41,49 @@ for file_name, content_list in brl_data_dict.items():
         print(f"   Content {idx}:")
         print(f"      If: {content_dict['if']}")
         print(f"      Then: {content_dict['then']}")
+
+
+
+
+
+# @api_view(['POST'])
+# def upload_workspace(request):
+#     if request.method == 'POST' and (request.FILES.get('zip_file') or request.data.get('git_link')):
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
+
+#         if request.FILES.get('zip_file'):
+#             zip_file = request.FILES['zip_file']
+
+#             with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#                 zip_ref.extractall(temp_dir)
+
+#         elif request.data.get('git_link'):
+#             git_link = request.data['git_link']
+
+#             # Clone the repository from the provided Git link to the temporary directory
+#             git.Repo.clone_from(git_link, temp_dir)
+
+#         extracted_data_list = extract_brl_files(temp_dir)
+
+#         # Save extracted data to the database
+#         for extracted_data in extracted_data_list:
+#             rule = ActionRule.objects.create(
+#                 file_name=extracted_data['file_name'],
+#                 tag_data=extracted_data['tag_data'],
+#                 category=extracted_data['category']
+#             )
+
+#         # Clean up temporary directory
+#         for item in os.listdir(temp_dir):
+#             item_path = os.path.join(temp_dir, item)
+#             if os.path.isfile(item_path):
+#                 os.remove(item_path)
+#             else:
+#                 shutil.rmtree(item_path)
+
+#         os.rmdir(temp_dir)
+
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
+
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
