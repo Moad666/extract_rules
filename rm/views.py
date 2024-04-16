@@ -14,7 +14,7 @@ import re
 from .models import Category,DecisionTable1, ActionRule
 import json
 
-
+# extraction of action rules
 def extract_brl_files(folder_path):
     action_rule_list = []
     action_rules_category = Category.objects.get(name='Action Rule')
@@ -61,7 +61,6 @@ def extract_xml_data(element, data):
         if len(list(child)) > 0:
             data[tag_name] = {}
             extract_xml_data(child, data[tag_name])
-
 @api_view(['POST'])
 @csrf_exempt
 def upload_workspace_BRL(request):
@@ -107,6 +106,10 @@ def upload_workspace_BRL(request):
     
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
+
+
+
+# extraction of decision tables
 def extract_dta_files(folder_path):
     decision_table_list = []
 
