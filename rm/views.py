@@ -5,7 +5,7 @@ import re
 import zipfile
 from django.http import JsonResponse
 from rm.serializers import CategorySerializer
-from .models import ActionRule, ActionRules, Category, DecisionTable, DecisionTable1, ExtractedRule, Queries
+from .models import ActionRule, ActionRule1, ActionRule2, ActionRules, Category, DecisionTable, DecisionTable1, DecisionTable2, ExtractedRule, Queries, Queries1
 from rest_framework.decorators import api_view, permission_classes
 import shutil
 import xml.etree.ElementTree as ET
@@ -413,15 +413,92 @@ from rest_framework.response import Response
 #     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 
+# def extract_brl_files(folder_path):
+#     grouped_data = {}
+#     action_rules_category = Category.objects.get(name='Action Rules')
+
+#     for root, dirs, files in os.walk(folder_path):
+#         parent_folder = os.path.basename(root)
+#         if parent_folder not in grouped_data:
+#             grouped_data[parent_folder] = []
+
+#         for file in files:
+#             if file.endswith('.brl'):
+#                 file_path = os.path.join(root, file)
+#                 full_file_name = os.path.relpath(file_path, start=folder_path)
+
+#                 tree = ET.parse(file_path)
+#                 root_element = tree.getroot()
+
+#                 tag_data = {}
+
+#                 def extract_xml_data(element, data):
+#                     for child in element:
+#                         tag_name = child.tag.split('}')[-1]
+#                         if child.text:
+#                             tag_content = html.unescape(child.text.strip())
+#                         else:
+#                             tag_content = ''
+
+#                         data[tag_name] = tag_content
+
+#                         if len(list(child)) > 0:
+#                             data[tag_name] = {}
+#                             extract_xml_data(child, data[tag_name])
+
+#                 extract_xml_data(root_element, tag_data)
+
+#                 grouped_data[parent_folder].append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category, 'parent_folder': parent_folder})
+
+#     return grouped_data
+
+
+
+# @api_view(['POST'])
+# def upload_workspace(request):
+#     if request.method == 'POST' and request.FILES.get('zip_file'):
+#         zip_file = request.FILES['zip_file']
+        
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
+        
+#         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#             zip_ref.extractall(temp_dir)
+        
+#         extracted_data_dict = extract_brl_files(temp_dir)  
+
+#         for parent_folder, extracted_data_list in extracted_data_dict.items():
+#             for extracted_data in extracted_data_list:
+#                 rule = ActionRule1.objects.create(
+#                     file_name=extracted_data['file_name'],
+#                     tag_data=extracted_data['tag_data'],
+#                     category=extracted_data['category'],
+#                     parent_folder=extracted_data['parent_folder']
+#                 )
+        
+#         # Clean up temporary directory
+#         for item in os.listdir(temp_dir):
+#             item_path = os.path.join(temp_dir, item)
+#             if os.path.isfile(item_path):
+#                 os.remove(item_path)
+#             else:
+#                 shutil.rmtree(item_path)
+
+#         os.rmdir(temp_dir)
+
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'parent_folder': data['parent_folder'], 'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for folder, data_list in extracted_data_dict.items() for data in data_list]})
+
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
 
 
 def extract_brl_files(folder_path):
-    action_rule_list = []
-
-    # Fetch the "Action Rules" category
+    extracted_data = []
     action_rules_category = Category.objects.get(name='Action Rules')
-
     for root, dirs, files in os.walk(folder_path):
+        parent_folder = os.path.basename(root)
+
         for file in files:
             if file.endswith('.brl'):
                 file_path = os.path.join(root, file)
@@ -430,27 +507,27 @@ def extract_brl_files(folder_path):
                 tree = ET.parse(file_path)
                 root_element = tree.getroot()
 
-                tag_data = {}
+                extracted_values = {}
+                for child in root_element:
+                    tag_name = child.tag.split('}')[-1]
+                    if child.text:
+                        tag_content = html.unescape(child.text.strip())
+                    else:
+                        tag_content = ''
 
-                def extract_xml_data(element, data):
-                    for child in element:
-                        tag_name = child.tag.split('}')[-1]
-                        if child.text:
-                            tag_content = html.unescape(child.text.strip())
-                        else:
-                            tag_content = ''
+                    extracted_values[tag_name] = tag_content
 
-                        data[tag_name] = tag_content
+                extracted_data.append({
+                    'file_name': full_file_name,
+                    'parent_folder': parent_folder,
+                    'name': extracted_values.get('name', ''),
+                    'uuid': extracted_values.get('uuid', ''),
+                    'locale': extracted_values.get('locale', ''),
+                    'definition': extracted_values.get('definition', ''),
+                    'category': action_rules_category
+                })
 
-                        if len(list(child)) > 0:
-                            data[tag_name] = {}
-                            extract_xml_data(child, data[tag_name])
-
-                extract_xml_data(root_element, tag_data)
-
-                action_rule_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category})
-
-    return action_rule_list
+    return extracted_data
 
 @api_view(['POST'])
 def upload_workspace(request):
@@ -464,28 +541,44 @@ def upload_workspace(request):
             zip_ref.extractall(temp_dir)
         
         extracted_data_list = extract_brl_files(temp_dir)  
-
-        for extracted_data in extracted_data_list:
-            rule = ActionRule.objects.create(
-                file_name=extracted_data['file_name'],
-                tag_data=extracted_data['tag_data'],
-                category=extracted_data['category']
+ 
+       
+        
+        for data in extracted_data_list:
+            rule = ActionRule2.objects.create(
+                file_name=data['file_name'],
+                parent_folder=data['parent_folder'],
+                name=data['name'],
+                uuid=data['uuid'],
+                locale=data['locale'],
+                definition=data['definition'],
+                category=data['category']
             )
         
         # Clean up temporary directory
-        for item in os.listdir(temp_dir):
-            item_path = os.path.join(temp_dir, item)
-            if os.path.isfile(item_path):
-                os.remove(item_path)
-            else:
-                shutil.rmtree(item_path)
+        shutil.rmtree(temp_dir)
+ # Serialize the extracted data list for JSON response
+        serialized_data = []
+        for item in extracted_data_list:
+            serialized_item = {
+                'file_name': item['file_name'],
+                'parent_folder': item['parent_folder'],
+                'name': item['name'],
+                'uuid': item['uuid'],
+                'locale': item['locale'],
+                'definition': item['definition'],
+                'category': item['category'].name  # Assuming you want to include the category name
+            }
+            serialized_data.append(serialized_item)
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': serialized_data})
 
-        os.rmdir(temp_dir)
-
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
-
-    
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
+
+
+
+
 
 
 
@@ -493,15 +586,14 @@ def upload_workspace(request):
 
 def extract_dta_files(folder_path):
     decision_table_list = []
-
-    # Fetch  category
-    action_rules_category = Category.objects.get(name='Decision Tables')
+    decision_tables_category = Category.objects.get(name='Decision Tables')
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
             if file.endswith('.dta'):
                 file_path = os.path.join(root, file)
                 full_file_name = os.path.relpath(file_path, start=folder_path)
+                parent_folder = os.path.basename(root)
 
                 tree = ET.parse(file_path)
                 root_element = tree.getroot()
@@ -524,9 +616,10 @@ def extract_dta_files(folder_path):
 
                 extract_xml_data(root_element, tag_data)
 
-                decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category})
+                decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': decision_tables_category, 'parent_folder': parent_folder})
 
     return decision_table_list
+
 
 @api_view(['POST'])
 def upload_workspace_DTA(request):
@@ -545,7 +638,8 @@ def upload_workspace_DTA(request):
             rule = DecisionTable1.objects.create(
                 file_name=extracted_data['file_name'],
                 tag_data=extracted_data['tag_data'],
-                category=extracted_data['category']
+                category=extracted_data['category'],
+                parent_folder=extracted_data['parent_folder']
             )
         
         # Clean up temporary directory
@@ -558,20 +652,21 @@ def upload_workspace_DTA(request):
 
         os.rmdir(temp_dir)
 
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': [{'parent_folder': data['parent_folder'],'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
 
-    
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 
 
 def extract_queries_files(folder_path):
-    queries_list = []
+    extracted_data = []
 
     # Fetch  category
-    action_rules_category = Category.objects.get(name='Queries')
+    querie_rules_category = Category.objects.get(name='Queries')
 
     for root, dirs, files in os.walk(folder_path):
+        parent_folder = os.path.basename(root)
+
         for file in files:
             if file.endswith('.qry'):
                 file_path = os.path.join(root, file)
@@ -580,27 +675,27 @@ def extract_queries_files(folder_path):
                 tree = ET.parse(file_path)
                 root_element = tree.getroot()
 
-                tag_data = {}
+                extracted_values = {}
+                for child in root_element:
+                    tag_name = child.tag.split('}')[-1]
+                    if child.text:
+                        tag_content = html.unescape(child.text.strip())
+                    else:
+                        tag_content = ''
 
-                def extract_xml_data(element, data):
-                    for child in element:
-                        tag_name = child.tag.split('}')[-1]
-                        if child.text:
-                            tag_content = html.unescape(child.text.strip())
-                        else:
-                            tag_content = ''
+                    extracted_values[tag_name] = tag_content
 
-                        data[tag_name] = tag_content
+                extracted_data.append({
+                    'file_name': full_file_name,
+                    'parent_folder': parent_folder,
+                    'name': extracted_values.get('name', ''),
+                    'uuid': extracted_values.get('uuid', ''),
+                    'locale': extracted_values.get('locale', ''),
+                    'definition': extracted_values.get('definition', ''),
+                    'category': querie_rules_category
+                })
 
-                        if len(list(child)) > 0:
-                            data[tag_name] = {}
-                            extract_xml_data(child, data[tag_name])
-
-                extract_xml_data(root_element, tag_data)
-
-                queries_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': action_rules_category})
-
-    return queries_list
+    return extracted_data
 
 
 @api_view(['POST'])
@@ -615,27 +710,37 @@ def upload_workspace_Queries(request):
             zip_ref.extractall(temp_dir)
         
         extracted_data_list = extract_queries_files(temp_dir)  
-
-        for extracted_data in extracted_data_list:
-            rule = Queries.objects.create(
-                file_name=extracted_data['file_name'],
-                tag_data=extracted_data['tag_data'],
-                category=extracted_data['category']
+ 
+       
+        
+        for data in extracted_data_list:
+            rule = Queries1.objects.create(
+                file_name=data['file_name'],
+                parent_folder=data['parent_folder'],
+                name=data['name'],
+                uuid=data['uuid'],
+                locale=data['locale'],
+                definition=data['definition'],
+                category=data['category']
             )
         
         # Clean up temporary directory
-        for item in os.listdir(temp_dir):
-            item_path = os.path.join(temp_dir, item)
-            if os.path.isfile(item_path):
-                os.remove(item_path)
-            else:
-                shutil.rmtree(item_path)
+        shutil.rmtree(temp_dir)
+ # Serialize the extracted data list for JSON response
+        serialized_data = []
+        for item in extracted_data_list:
+            serialized_item = {
+                'file_name': item['file_name'],
+                'parent_folder': item['parent_folder'],
+                'name': item['name'],
+                'uuid': item['uuid'],
+                'locale': item['locale'],
+                'definition': item['definition'],
+                'category': item['category'].name  # Assuming you want to include the category name
+            }
+            serialized_data.append(serialized_item)
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'qry_data': serialized_data})
 
-        os.rmdir(temp_dir)
-
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': [{'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
-
-    
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 

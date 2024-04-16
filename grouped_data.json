@@ -1,0 +1,84 @@
+{
+    "temp_extracted_folder": [],
+    "UnitedTTRBOM": [],
+    ".settings": [],
+    "bom": [],
+    "deployment": [],
+    "queries": [],
+    "resources": [],
+    "xom-libraries": [],
+    "rules": [],
+    "templates": [],
+    "UnitedTTRRule": [],
+    "TTR": [],
+    "Common": [],
+    "Group1": [
+        {
+            "file_name": "UnitedTTRRule\\rules\\TTR\\Validation\\Group1\\DisabledRules.brl",
+            "tag_data": {
+                "name": "DisabledRules",
+                "uuid": "db6e76ee-ed09-4ce4-affc-36e10852a32c",
+                "locale": "en_US",
+                "definition": "if\n    all of the following conditions are true :\n            - the rule name of 'ttr request' is one of { \"G1R13\",\"G1R14\",\"G1R30\" }\nthen\n    set the code of the errors of 'ttr response' to \"530\" ;\n    set the description of the errors of 'ttr response' to \"Disabled Rule\" ;\n    set the resolution of the errors of 'ttr response' to \"This rule is disabled\" ;\n    set the rule name of the errors of 'ttr response' to the rule name of 'ttr request' ;\n    set the rule description of the errors of 'ttr response' to \"This rule is disabled\" ;"
+            },
+            "category": "Action Rules"
+        }
+    ],
+    "Group2": [
+        {
+            "file_name": "UnitedTTRRule\\rules\\TTR\\Validation\\Group2\\DisabledRules.brl",
+            "tag_data": {
+                "name": "DisabledRules",
+                "uuid": "4afaf2bf-11b9-4a10-82c7-d63af2c078cc",
+                "locale": "en_US",
+                "definition": "if\n    all of the following conditions are true :\n            - the rule name of 'ttr request' is one of { \"G2R9\" , \"G2R10\" , \"G2R16\" , \"G2R20\" , \"G2R21\" , \"G2R25\" , \"G2R27\" , \"G2R28\" , \"G2R33\" , \"G2R34\" , \"G2R36\" }\nthen\n    set the code of the errors of 'ttr response' to \"530\" ;\n    set the description of the errors of 'ttr response' to \"Disabled Rule\" ;\n    set the resolution of the errors of 'ttr response' to \"This rule is disabled\" ;\n    set the rule name of the errors of 'ttr response' to the rule name of 'ttr request' ;\n    set the rule description of the errors of 'ttr response' to \"This rule is disabled\" ;"
+            },
+            "category": "Action Rules"
+        },
+        {
+            "file_name": "UnitedTTRRule\\rules\\TTR\\Validation\\Group2\\GroupIndicatorValidation.brl",
+            "tag_data": {
+                "name": "GroupIndicatorValidation",
+                "uuid": "96d396e0-8f1b-43e5-a4ac-b9596087bc3d",
+                "locale": "en_US",
+                "definition": "if\n    all of the following conditions are true :\n            - the rule name of 'ttr request' is \"G2R23\"\n            - the names passenger count of 'ttr request' is at most 9\n            - the group indicator of 'ttr request' is at most 0\n            - the flight passenger count of 'ttr request' is at most 9\nthen\n    set the code of the errors of 'ttr response' to \"510\" ;\n    set the description of the errors of 'ttr response' to \"Values Mismatch for A Rule\" ;\n    set the resolution of the errors of 'ttr response' to \"Based on the analysis of the received request to execute the expected rule\" + \" \" + the rule name of 'ttr request' + \", the request is encountering the following issues: Value Mismatches: The following fields have incorrect values:{['flightPassengerCount' <= 9] || [['namesPassengerCount' <= 9] || [['groupIndicator' <= 0]  (Expected: ['flightPassengerCount' > 9] || [['namesPassengerCount' > 9] || [['groupIndicator' > 0])}. To successfully execute the rule\" + \" \" + the rule name of 'ttr request' + \", ensure that the request includes the following fields and their respective expected values: {['flightPassengerCount' > 9] || [['namesPassengerCount' > 9] || [['groupIndicator' > 0]}. Make the necessary adjustments to the request and resubmit it to execute the rule successfully.\" ;\n    set the rule name of the errors of 'ttr response' to the rule name of 'ttr request' ;\n    set the rule description of the errors of 'ttr response' to \"To fire the rule\" + \" \" + the rule name of 'ttr request' + \" \" + \"the request should include the following fields and values {['flightPassengerCount' > 9] || [['namesPassengerCount' > 9] || [['groupIndicator' > 0]}\" ;"
+            },
+            "category": "Action Rules"
+        },
+        {
+            "file_name": "UnitedTTRRule\\rules\\TTR\\Validation\\Group2\\ProcessAttemptsValidation.brl",
+            "tag_data": {
+                "name": "ProcessAttemptsValidation",
+                "uuid": "d05e9425-b3df-407a-8720-807026ca45f1",
+                "locale": "en_US",
+                "definition": "if\n    all of the following conditions are true :\n            - the rule name of 'ttr request' is \"G2R22\"\n            - the process attempts of 'ttr request' is less than 3\nthen\n    set the code of the errors of 'ttr response' to \"510\" ;\n    set the description of the errors of 'ttr response' to \"Values Mismatch for A Rule\" ;\n    set the resolution of the errors of 'ttr response' to \"Based on the analysis of the received request to execute the expected rule\" + \" \" + the rule name of 'ttr request' + \", the request is encountering the following issues: Value Mismatches: The following fields have incorrect values:{['processAttempts' is less than 3]  (Expected: 'processAttempts' >= 3)}. To successfully execute the rule\" + \" \" + the rule name of 'ttr request' + \", ensure that the request includes the following fields and their respective expected values: {['processAttempts' >= 3]}. Make the necessary adjustments to the request and resubmit it to execute the rule successfully.\" ;\n    set the rule name of the errors of 'ttr response' to the rule name of 'ttr request' ;\n    set the rule description of the errors of 'ttr response' to \"To fire the rule\" + \" \" + the rule name of 'ttr request' + \" \" + \"the request should include the following fields and values {['processAttempts' >= 3]}\" ;"
+            },
+            "category": "Action Rules"
+        }
+    ],
+    "Group3": [
+        {
+            "file_name": "UnitedTTRRule\\rules\\TTR\\Validation\\Group3\\DisabledRules.brl",
+            "tag_data": {
+                "name": "DisabledRules",
+                "uuid": "961ac649-e300-4fdb-b951-44c9e525f2d0",
+                "locale": "en_US",
+                "definition": "if\n    all of the following conditions are true :\n            - the rule name of 'ttr request' is one of { \"G3R1\" , \"G3R9\" , \"G3R3\" }\nthen\n    set the code of the errors of 'ttr response' to \"530\" ;\n    set the description of the errors of 'ttr response' to \"Disabled Rule\" ;\n    set the resolution of the errors of 'ttr response' to \"This rule is disabled\" ;\n    set the rule name of the errors of 'ttr response' to the rule name of 'ttr request' ;\n    set the rule description of the errors of 'ttr response' to \"This rule is disabled\" ;"
+            },
+            "category": "Action Rules"
+        }
+    ],
+    "Validation": [],
+    "UnitedTTRService": [],
+    "reports": [],
+    "img": [],
+    "UnitedTTRXOM": [],
+    "bin": [],
+    "src": [],
+    "com": [],
+    "united": [],
+    "ttr": [],
+    "common": [],
+    "specific": [],
+    "utilities": []
+}
