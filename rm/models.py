@@ -3,11 +3,6 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
-class DecisionTable(models.Model):
-    file_name = models.CharField(max_length=255, default="file_zip")
-    tag_data = models.JSONField(default=dict)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=2)
-
 
 class DecisionTable1(models.Model):
     file_name = models.CharField(max_length=255, default="file_zip")
@@ -50,3 +45,32 @@ class DecisionTable1(models.Model):
 
     # Return the newly created instance
         return decision_table
+
+
+class ActionRule(models.Model):
+    file_name = models.CharField(max_length=255, default="file_zip")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=2)
+
+    # Define attributes for each tag in the XML
+    name = models.CharField(max_length=255)
+    uuid = models.CharField(max_length=255)
+    locale = models.CharField(max_length=255)
+    definition = models.TextField()
+
+    @classmethod
+    def create_from_xml(cls, file_name, tag_data, category):
+        name = tag_data.get('name')
+        definition = tag_data.get('definition')
+        uuid = tag_data.get('uuid')
+        locale = tag_data.get('locale')
+        
+        action_rule = cls.objects.create(
+            file_name=file_name,
+            name=name,
+            definition=definition,
+            category=category,
+            uuid=uuid,
+            locale=locale
+        )
+
+        return action_rule
