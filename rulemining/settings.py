@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'rulemining.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'rule_mining',
+        'NAME': 'rule-mining',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://bentaouiloussama:BThkmW5e8OAPksdD@rmcluster.46rllnu.mongodb.net/rule_mining',
+            'host': 'mongodb+srv://bentaouiloussama:BThkmW5e8OAPksdD@rmcluster.46rllnu.mongodb.net/rule-mining',
         }
     }
 }

@@ -1,9 +1,10 @@
 # serializers.py
 
 from rest_framework import serializers
-from .models import Category
+from .models import RuleCategory
 
-class CategorySerializer(serializers.ModelSerializer):
+class RuleCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
+        model = RuleCategory
         fields = ['name']
+

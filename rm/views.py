@@ -4,8 +4,8 @@ import os
 import re
 import zipfile
 from django.http import JsonResponse
-from rm.serializers import CategorySerializer
-from .models import ActionRule, ActionRule1, ActionRule2, ActionRules, Category, DecisionTable, DecisionTable1, DecisionTable2, ExtractedRule, Queries, Queries1
+from rm.serializers import RuleCategorySerializer
+from .models import ActionRule, DecisionTable1, DecisionTable3, DecisionTable4, Queries, RuleCategory
 from rest_framework.decorators import api_view, permission_classes
 import shutil
 import xml.etree.ElementTree as ET
@@ -495,7 +495,7 @@ from rest_framework.response import Response
 
 def extract_brl_files(folder_path):
     extracted_data = []
-    action_rules_category = Category.objects.get(name='Action Rules')
+    action_rules_category = RuleCategory.objects.get(name='Action Rules')
     for root, dirs, files in os.walk(folder_path):
         parent_folder = os.path.basename(root)
 
@@ -524,7 +524,7 @@ def extract_brl_files(folder_path):
                     'uuid': extracted_values.get('uuid', ''),
                     'locale': extracted_values.get('locale', ''),
                     'definition': extracted_values.get('definition', ''),
-                    'category': action_rules_category
+                    'rule_category': action_rules_category
                 })
 
     return extracted_data
@@ -545,14 +545,14 @@ def upload_workspace(request):
        
         
         for data in extracted_data_list:
-            rule = ActionRule2.objects.create(
+            rule = ActionRule.objects.create(
                 file_name=data['file_name'],
                 parent_folder=data['parent_folder'],
                 name=data['name'],
                 uuid=data['uuid'],
                 locale=data['locale'],
                 definition=data['definition'],
-                category=data['category']
+                rule_category=data['rule_category']
             )
         
         # Clean up temporary directory
@@ -567,7 +567,7 @@ def upload_workspace(request):
                 'uuid': item['uuid'],
                 'locale': item['locale'],
                 'definition': item['definition'],
-                'category': item['category'].name  # Assuming you want to include the category name
+                'rule_category': item['rule_category'].name  # Assuming you want to include the category name
             }
             serialized_data.append(serialized_item)
         return JsonResponse({'message': 'Files extracted and saved successfully.', 'brl_data': serialized_data})
@@ -577,16 +577,9 @@ def upload_workspace(request):
 
 
 
-
-
-
-
-
-
-
 def extract_dta_files(folder_path):
     decision_table_list = []
-    decision_tables_category = Category.objects.get(name='Decision Tables')
+    decision_tables_category = RuleCategory.objects.get(name='Decision Tables')
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
@@ -616,7 +609,7 @@ def extract_dta_files(folder_path):
 
                 extract_xml_data(root_element, tag_data)
 
-                decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'category': decision_tables_category, 'parent_folder': parent_folder})
+                decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'rule_category': decision_tables_category, 'parent_folder': parent_folder})
 
     return decision_table_list
 
@@ -638,7 +631,7 @@ def upload_workspace_DTA(request):
             rule = DecisionTable1.objects.create(
                 file_name=extracted_data['file_name'],
                 tag_data=extracted_data['tag_data'],
-                category=extracted_data['category'],
+                rule_category=extracted_data['rule_category'],
                 parent_folder=extracted_data['parent_folder']
             )
         
@@ -652,9 +645,103 @@ def upload_workspace_DTA(request):
 
         os.rmdir(temp_dir)
 
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': [{'parent_folder': data['parent_folder'],'file_name': data['file_name'], 'tag_data': data['tag_data'], 'category': data['category'].name} for data in extracted_data_list]})
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': [{'parent_folder': data['parent_folder'],'file_name': data['file_name'], 'tag_data': data['tag_data'], 'rule_category': data['rule_category'].name} for data in extracted_data_list]})
 
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+# def extract_dta_files(folder_path):
+#     extracted_data = []
+#     decision_tables_category = RuleCategory.objects.get(name='Decision Tables')
+    
+#     for root, dirs, files in os.walk(folder_path):
+#         parent_folder = os.path.basename(root)
+        
+#         for file in files:
+#             if file.endswith('.dta'):
+#                 file_path = os.path.join(root, file)
+#                 full_file_name = os.path.relpath(file_path, start=folder_path)
+                
+#                 tree = ET.parse(file_path)
+#                 root_element = tree.getroot()
+                
+#                 extracted_values = {}
+#                 for child in root_element.iter():
+#                     tag_name = child.tag.split('}')[-1]
+#                     if child.text:
+#                         tag_content = html.unescape(child.text.strip())
+#                     else:
+#                         tag_content = ''
+                    
+#                     extracted_values[tag_name] = tag_content
+                
+#                 decision_data = {
+#                     'file_name': full_file_name,
+#                     'parent_folder': parent_folder,
+#                     'name': extracted_values.get('name', ''),
+#                     'uuid': extracted_values.get('uuid', ''),
+#                     'locale': extracted_values.get('locale', ''),
+#                     'body': extracted_values.get('body', ''),
+#                     'resources': extracted_values.get('resources', ''),
+#                     'rule_category': decision_tables_category
+#                 }
+                
+#                 extracted_data.append(decision_data)
+    
+#     return extracted_data
+
+
+
+
+# @api_view(['POST'])
+# def upload_workspace_DTA(request):
+#     if request.method == 'POST' and request.FILES.get('zip_file'):
+#         zip_file = request.FILES['zip_file']
+
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
+
+#         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#             zip_ref.extractall(temp_dir)
+
+#         extracted_data_list = extract_dta_files(temp_dir)  
+
+#         for data in extracted_data_list:
+#             rule = DecisionTable4.objects.create(
+#                 file_name=data['file_name'],
+#                 parent_folder=data['parent_folder'],
+#                 name=data['name'],
+#                 uuid=data['uuid'],
+#                 locale=data['locale'],
+#                 body=data['body'],
+#                 resources=data['resources'],
+#                 rule_category=data['rule_category']
+#             )
+            
+
+
+#         # Clean up temporary directory
+#         shutil.rmtree(temp_dir)
+
+#         # Serialize the extracted data list for JSON response
+#         serialized_data = []
+#         for item in extracted_data_list:
+#             serialized_item = {
+#                 'file_name': item['file_name'],
+#                 'parent_folder': item['parent_folder'],
+#                 'name': item['name'],
+#                 'uuid': item['uuid'],
+#                 'locale': item['locale'],
+#                 'body': item['body'],
+#                 'resources': item['resources'],
+#                 'rule_category':  item['rule_category'].name  # Include the name of the RuleCategory
+#             }
+#             serialized_data.append(serialized_item)
+
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': serialized_data})
+
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
 
 
 
@@ -662,7 +749,7 @@ def extract_queries_files(folder_path):
     extracted_data = []
 
     # Fetch  category
-    querie_rules_category = Category.objects.get(name='Queries')
+    querie_rules_category = RuleCategory.objects.get(name='Queries')
 
     for root, dirs, files in os.walk(folder_path):
         parent_folder = os.path.basename(root)
@@ -692,7 +779,7 @@ def extract_queries_files(folder_path):
                     'uuid': extracted_values.get('uuid', ''),
                     'locale': extracted_values.get('locale', ''),
                     'definition': extracted_values.get('definition', ''),
-                    'category': querie_rules_category
+                    'rule_category': querie_rules_category
                 })
 
     return extracted_data
@@ -714,14 +801,14 @@ def upload_workspace_Queries(request):
        
         
         for data in extracted_data_list:
-            rule = Queries1.objects.create(
+            rule = Queries.objects.create(
                 file_name=data['file_name'],
                 parent_folder=data['parent_folder'],
                 name=data['name'],
                 uuid=data['uuid'],
                 locale=data['locale'],
                 definition=data['definition'],
-                category=data['category']
+                rule_category=data['rule_category']
             )
         
         # Clean up temporary directory
@@ -736,7 +823,7 @@ def upload_workspace_Queries(request):
                 'uuid': item['uuid'],
                 'locale': item['locale'],
                 'definition': item['definition'],
-                'category': item['category'].name  # Assuming you want to include the category name
+                'rule_category': item['rule_category'].name  # Assuming you want to include the category name
             }
             serialized_data.append(serialized_item)
         return JsonResponse({'message': 'Files extracted and saved successfully.', 'qry_data': serialized_data})
@@ -747,9 +834,9 @@ def upload_workspace_Queries(request):
 
 
 @api_view(['POST'])
-def create_category(request):
+def create_rule_category(request):
     if request.method == 'POST':
-        serializer = CategorySerializer(data=request.data)
+        serializer = RuleCategorySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
