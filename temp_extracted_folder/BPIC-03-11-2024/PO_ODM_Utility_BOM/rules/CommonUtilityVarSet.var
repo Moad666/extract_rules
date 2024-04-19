@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
-  <name>CommonUtilityVarSet</name>
-  <uuid>49bb3ae1-e873-4225-8b4c-068295b419a3</uuid>
-  <variables name="sitescopeMonitoring" type="com.humana.odm.utility.sitescope.SitescopeMonitoring" initialValue="" verbalization="the sitescope monitor"/>
-  <variables name="technicalError" type="com.humana.odm.utility.exception.bo.TechnicalError" initialValue="new com.humana.odm.utility.exception.bo.TechnicalError()" verbalization="the technical error"/>
-</ilog.rules.studio.model.base:VariableSet>
