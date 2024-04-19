@@ -83,3 +83,29 @@ class DecisionTable4(models.Model):
     body = models.TextField()
     resources = models.TextField()
     extracted_attributes = models.JSONField()
+
+
+class DecisionTable5(models.Model):
+    file_name = models.CharField(max_length=255)
+    rule_category = models.ForeignKey(RuleCategory, on_delete=models.CASCADE, default=2)
+    parent_folder = models.CharField(max_length=255, default='')
+    
+    # Include other keys from tag_data directly in the model
+    eAnnotations = models.JSONField(blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    uuid = models.CharField(max_length=36, blank=True, null=True)
+    locale = models.CharField(max_length=10, blank=True, null=True)
+    definition = models.JSONField(blank=True, null=True)
+
+
+class DecisionTable(models.Model):
+    file_name = models.CharField(max_length=255)
+    rule_category = models.ForeignKey(RuleCategory, on_delete=models.CASCADE, default=2)
+    parent_folder = models.CharField(max_length=255, default='')
+    
+    # Include other keys from tag_data directly in the model
+    eAnnotations = models.JSONField(blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    uuid = models.CharField(max_length=36, blank=True, null=True)
+    locale = models.CharField(max_length=10, blank=True, null=True)
+    definition = models.JSONField(blank=True, null=True)

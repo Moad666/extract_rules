@@ -1,0 +1,25 @@
+package com.humana.bpic.DEPEnrollmentValidation.request;
+
+import java.util.List;
+
+//This is part of 124AM rules development
+public class Ethnicity {
+    private String inputEthnicityCode;
+    private String wsEthnicityCode;
+    private List<String> amentyTableValueE;
+    private List<String> amenty;
+    private String occurrenceEthnicityCode;
+    private String amPlatform;
+    private List<String> amTableValueME;
+    private List<String> amTableValueE;
+    private String wsCountE;
+    private String ethnicityInformation;
+    private String rfmMemberEthnicityCode;
+    private String stflEthnicityCode;
+    private String aeiaEthnicityCode;
+    private int amEthyIndex;
+    private String outputEthnicityCode;
+    private int totalCommitCount;
+    private String reformatEthnicityCode;
+    private String wscountWrite1;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>BEQ Readiness</name>
+  <uuid>b5ffac92-0d51-4455-b5f7-de6370890191</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Sequential" ExitCriteria="None" Identifier="Demographics - DOB" Ordering="Literal">
+        <RuleList>
+          <Rule Uuid="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+          <Rule Uuid="52eb616a-325c-435b-ad63-6f834f117364"/>
+          <Rule Uuid="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+          <Rule Uuid="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+          <Rule Uuid="244a40e2-7540-425a-891f-963cab246ff5"/>
+          <Rule Uuid="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Sequential" ExitCriteria="None" Identifier="Official Identifiers - Medicare MBI" Ordering="Literal">
+        <RuleList>
+          <Rule Uuid="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+          <Rule Uuid="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+          <Rule Uuid="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+          <Rule Uuid="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+          <Rule Uuid="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+          <Rule Uuid="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+          <Rule Uuid="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Sequential" ExitCriteria="None" Identifier="MCARE Policy - Proposed Effective Date Basic" Ordering="Literal">
+        <RuleList>
+          <Rule Uuid="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+          <Rule Uuid="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+          <Rule Uuid="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+          <Rule Uuid="21249667-be73-4c39-bb63-357f1aa4c188"/>
+          <Rule Uuid="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+          <Rule Uuid="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_1"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="Demographics - DOB"/>
+      <TaskNode Identifier="node_3" Task="Official Identifiers - Medicare MBI"/>
+      <TaskNode Identifier="node_4" Task="MCARE Policy - Proposed Effective Date Basic"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_3" Source="node_4" Target="node_1"/>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_3"/>
+      <Transition Identifier="transition_1" Source="node_3" Target="node_2"/>
+      <Transition Identifier="transition_2" Source="node_2" Target="node_4"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node_2#height">53.402344</Data>
+      <Data Name="node_4#width">102.0</Data>
+      <Data Name="node_1#height">19.999987</Data>
+      <Data Name="node_3#height">97.50586</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_4#height">112.20703</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_2#width">119.36719</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_3#y">97.70117</Data>
+      <Data Name="node_4#x">51.0</Data>
+      <Data Name="node_4#y">311.85645</Data>
+      <Data Name="node_0#x">51.0</Data>
+      <Data Name="node_0#y">10.5</Data>
+      <Data Name="node_1#x">51.0</Data>
+      <Data Name="node_1#y">405.9082</Data>
+      <Data Name="node_2#x">51.0</Data>
+      <Data Name="node_2#y">201.10352</Data>
+      <Data Name="node_3#x">51.0</Data>
+      <Data Name="node_1#name">node_2</Data>
+      <Data Name="node_3#width">102.0</Data>
+      <Data Name="node_4#name">node_4</Data>
+      <Data Name="node_1#width">20.000004</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_3#name">node_3</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow></rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

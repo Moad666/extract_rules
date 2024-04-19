@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Date of Birth Doesn't Contain 8 Numbers</name>
+  <uuid>52eb616a-325c-435b-ad63-6f834f117364</uuid>
+  <categories>Medicaid</categories>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+    set 'Date Of Birth' to the date of birth date of the consumers of 'the odm consumer data request' ;
+    set 'DOB' to remove special characters and space ( 'Date Of Birth' ) ;
+if
+    'DOB' is not null
+    and 'DOB' is not empty
+    and ( Numeric validation of 'DOB' is false
+    or the length of String: 'DOB' is not 8 )
+then
+    add the error message with ruleset name - "Demographics - DOB" , issue code "P0000011" , action code "" , from value of 'Date Of Birth'  and to value of "" for the DOB issue of 'the odm consumer data response' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

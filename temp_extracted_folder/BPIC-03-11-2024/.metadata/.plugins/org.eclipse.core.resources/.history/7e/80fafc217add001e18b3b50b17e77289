@@ -1,0 +1,125 @@
+package com.humana.bpic.DEPEnrollmentValidation.response;
+
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+
+import com.humana.bpic.DEPEnrollmentValidation.request.AgentsAndBrokers;
+import com.humana.bpic.DEPEnrollmentValidation.request.Consumers;
+import com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission;
+import com.humana.bpic.DEPEnrollmentValidation.request.Message;
+import com.humana.bpic.DEPEnrollmentValidation.request.PartnerAndMarketing;
+import com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper;
+
+public class ODMConsumerDataResponse {
+	private String transactionTrackingId="";
+	private Date transactionDateTimeStamp=new Date();
+	private Consumers consumers;
+	private EnrollmentApplicationSubmission enrollmentApplicationSubmission;
+	private List<AgentsAndBrokers> agentsAndBrokers;
+	private PartnerAndMarketing partnerAndMarketing;
+	private List<Message> messageList;
+	private boolean isValidOfficialIdentifierMBIUsableFlag = true;
+	private boolean isValidDemographicDOBUsableFlag = true;
+	private boolean isValidMcarePolicyProposedEffectiveDateUsableFlag = true;
+	
+    private boolean isRaceCodeFoundFlag;
+    private boolean isEthnicityCodeFoundFlag;
+    private boolean isAe03SU10Ind;
+    private boolean isAe03SU32Ind;
+    private boolean isIndividualMedicare;
+    private boolean isShortFormType;
+    private boolean isValidBeqResponseMedicarePARTAStartDateUsableFlag;
+    private boolean isWs03su65error;
+    private boolean isForcedtoPendFlag;
+    private boolean is03su26Error;
+    private boolean isAemobvAe03sy32Indicator;
+    private boolean isAemobvAe03su10Indicatore;
+    private boolean isRecordFoundMFlag;
+	
+	public String getTransactionTrackingId() {
+		return transactionTrackingId;
+	}
+
+	public void setTransactionTrackingId(String transactionTrackingId) {
+		this.transactionTrackingId = transactionTrackingId;
+	}
+
+	public Date getTransactionDateTimeStamp() {
+		return transactionDateTimeStamp;
+	}
+
+	public void setTransactionDateTimeStamp(Date transactionDateTimeStamp) {
+		this.transactionDateTimeStamp = DEPEnrollmentHelper.convertToUTCDate(transactionDateTimeStamp);
+	}
+
+	public Consumers getConsumers() {
+		return consumers;
+	}
+
+	public void setConsumers(Consumers consumers) {
+		this.consumers = consumers;
+	}
+
+	public EnrollmentApplicationSubmission getEnrollmentApplicationSubmission() {
+		return enrollmentApplicationSubmission;
+	}
+
+	public void setEnrollmentApplicationSubmission(EnrollmentApplicationSubmission enrollmentApplicationSubmission) {
+		this.enrollmentApplicationSubmission = enrollmentApplicationSubmission;
+	}
+
+	public List<AgentsAndBrokers> getAgentsAndBrokers() {
+		if (agentsAndBrokers == null)
+			agentsAndBrokers = new ArrayList<AgentsAndBrokers>();
+		return agentsAndBrokers;
+	}
+
+	public void setAgentsAndBrokers(List<AgentsAndBrokers> agentsAndBrokers) {
+		this.agentsAndBrokers = agentsAndBrokers;
+	}
+
+	public PartnerAndMarketing getPartnerAndMarketing() {
+		return partnerAndMarketing;
+	}
+
+	public void setPartnerAndMarketing(PartnerAndMarketing partnerAndMarketing) {
+		this.partnerAndMarketing = partnerAndMarketing;
+	}
+
+	public List<Message> getMessageList() {
+		return messageList;
+	}
+
+	public void setMessageList(List<Message> messageList) {
+		this.messageList = messageList;
+	}
+
+	public boolean isValidOfficialIdentifierMBIUsableFlag() {
+		return isValidOfficialIdentifierMBIUsableFlag;
+	}
+
+	public void setValidOfficialIdentifierMBIUsableFlag(boolean isValidOfficialIdentifierMBIUsableFlag) {
+		this.isValidOfficialIdentifierMBIUsableFlag = isValidOfficialIdentifierMBIUsableFlag;
+	}
+
+	public boolean isValidDemographicDOBUsableFlag() {
+		return isValidDemographicDOBUsableFlag;
+	}
+
+	public void setValidDemographicDOBUsableFlag(boolean isValidDemographicDOBUsableFlag) {
+		this.isValidDemographicDOBUsableFlag = isValidDemographicDOBUsableFlag;
+	}
+
+	public boolean isValidMcarePolicyProposedEffectiveDateUsableFlag() {
+		return isValidMcarePolicyProposedEffectiveDateUsableFlag;
+	}
+
+	public void setValidMcarePolicyProposedEffectiveDateUsableFlag(
+			boolean isValidMcarePolicyProposedEffectiveDateUsableFlag) {
+		this.isValidMcarePolicyProposedEffectiveDateUsableFlag = isValidMcarePolicyProposedEffectiveDateUsableFlag;
+	}
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Reset Sitescope</name>
+  <uuid>975f90b6-12c9-475b-a2dc-28fab05872c9</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[then 
+
+set 'the sitescope monitor' to application utility.initiateSitescope ( 'the sitescope monitor' ) ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

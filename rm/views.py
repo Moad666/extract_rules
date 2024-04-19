@@ -5,13 +5,14 @@ import re
 import zipfile
 from django.http import JsonResponse
 from rm.serializers import RuleCategorySerializer
-from .models import ActionRule, DecisionTable1, DecisionTable3, DecisionTable4, Queries, RuleCategory
+from .models import ActionRule, DecisionTable, DecisionTable1, DecisionTable3, DecisionTable4, Queries, RuleCategory, DecisionTable5
 from rest_framework.decorators import api_view, permission_classes
 import shutil
 import xml.etree.ElementTree as ET
 import json
 from rest_framework import status
 from rest_framework.response import Response
+from django.forms.models import model_to_dict
 
 # def extract_brl_files(folder_path):
 #     brl_data_dict = {}  # Dictionary to store extracted data
@@ -575,8 +576,6 @@ def upload_workspace(request):
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 
-
-
 def extract_dta_files(folder_path):
     decision_table_list = []
     decision_tables_category = RuleCategory.objects.get(name='Decision Tables')
@@ -609,7 +608,18 @@ def extract_dta_files(folder_path):
 
                 extract_xml_data(root_element, tag_data)
 
-                decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'rule_category': decision_tables_category, 'parent_folder': parent_folder})
+                # Update to include 'eAnnotations', 'name', 'uuid', and 'locale' attributes
+                additional_attributes = {
+                    'eAnnotations': tag_data.get('eAnnotations', ''),
+                    'name': tag_data.get('name', ''),
+                    'uuid': tag_data.get('uuid', ''),
+                    'locale': tag_data.get('locale', '')
+                }
+
+                # Update to include only the 'definition' attribute
+                definition_attribute = {'definition': tag_data.get('definition', {})} 
+
+                decision_table_list.append({'file_name': full_file_name, 'rule_category': decision_tables_category, 'parent_folder': parent_folder, **definition_attribute, **additional_attributes})
 
     return decision_table_list
 
@@ -625,29 +635,115 @@ def upload_workspace_DTA(request):
         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
             zip_ref.extractall(temp_dir)
         
-        extracted_data_list = extract_dta_files(temp_dir)  
+        extracted_data_list = extract_dta_files(temp_dir)
+        saved_instances = []  
 
-        for extracted_data in extracted_data_list:
-            rule = DecisionTable1.objects.create(
-                file_name=extracted_data['file_name'],
-                tag_data=extracted_data['tag_data'],
-                rule_category=extracted_data['rule_category'],
-                parent_folder=extracted_data['parent_folder']
+        processed_data_list = []
+        for data in extracted_data_list:
+            file_name = data.get('file_name', '')  # Get file_name or set to empty string if not present
+            eAnnotations = data.get('eAnnotations', '')
+            name = data.get('name', '')
+            uuid = data.get('uuid', '')
+            locale = data.get('locale', '')
+
+            rule_category_name = data['rule_category'].name if 'rule_category' in data else ''
+            definition = data.get('definition', '')
+              # Create a new DecisionTable instance and save it to the database
+            decision_table_instance = DecisionTable(
+                file_name=file_name,
+                eAnnotations=eAnnotations,
+                name=name,
+                uuid=uuid,
+                locale=locale,
+                rule_category=RuleCategory.objects.get(name=rule_category_name),
+                definition=definition,
+                parent_folder=data.get('parent_folder', '')
             )
-        
-        # Clean up temporary directory
-        for item in os.listdir(temp_dir):
-            item_path = os.path.join(temp_dir, item)
-            if os.path.isfile(item_path):
-                os.remove(item_path)
-            else:
-                shutil.rmtree(item_path)
+            decision_table_instance.save()
+            saved_instances.append(model_to_dict(decision_table_instance))
+            # processed_data_list.append({'parent_folder': data.get('parent_folder', ''), 'file_name': file_name, 'rule_category': rule_category_name, 'definition': definition, 'eAnnotations': eAnnotations, 'name': name, 'uuid': uuid, 'locale': locale})
 
-        os.rmdir(temp_dir)
-
-        return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': [{'parent_folder': data['parent_folder'],'file_name': data['file_name'], 'tag_data': data['tag_data'], 'rule_category': data['rule_category'].name} for data in extracted_data_list]})
+        return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': saved_instances})
 
     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
+
+
+
+
+
+
+
+# def extract_dta_files(folder_path):
+#     decision_table_list = []
+#     decision_tables_category = RuleCategory.objects.get(name='Decision Tables')
+
+#     for root, dirs, files in os.walk(folder_path):
+#         for file in files:
+#             if file.endswith('.dta'):
+#                 file_path = os.path.join(root, file)
+#                 full_file_name = os.path.relpath(file_path, start=folder_path)
+#                 parent_folder = os.path.basename(root)
+
+#                 tree = ET.parse(file_path)
+#                 root_element = tree.getroot()
+
+#                 tag_data = {}
+
+#                 def extract_xml_data(element, data):
+#                     for child in element:
+#                         tag_name = child.tag.split('}')[-1]
+#                         if child.text:
+#                             tag_content = html.unescape(child.text.strip())
+#                         else:
+#                             tag_content = ''
+
+#                         data[tag_name] = tag_content
+
+#                         if len(list(child)) > 0:
+#                             data[tag_name] = {}
+#                             extract_xml_data(child, data[tag_name])
+
+#                 extract_xml_data(root_element, tag_data)
+
+#                 decision_table_list.append({'file_name': full_file_name, 'tag_data': tag_data, 'rule_category': decision_tables_category, 'parent_folder': parent_folder})
+
+#     return decision_table_list
+
+
+# @api_view(['POST'])
+# def upload_workspace_DTA(request):
+#     if request.method == 'POST' and request.FILES.get('zip_file'):
+#         zip_file = request.FILES['zip_file']
+        
+#         temp_dir = 'temp_extracted_folder'
+#         os.makedirs(temp_dir, exist_ok=True)
+        
+#         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+#             zip_ref.extractall(temp_dir)
+        
+#         extracted_data_list = extract_dta_files(temp_dir)  
+
+#         for extracted_data in extracted_data_list:
+#             rule = DecisionTable1.objects.create(
+#                 file_name=extracted_data['file_name'],
+#                 tag_data=extracted_data['tag_data'],
+#                 rule_category=extracted_data['rule_category'],
+#                 parent_folder=extracted_data['parent_folder']
+#             )
+        
+#         # Clean up temporary directory
+#         for item in os.listdir(temp_dir):
+#             item_path = os.path.join(temp_dir, item)
+#             if os.path.isfile(item_path):
+#                 os.remove(item_path)
+#             else:
+#                 shutil.rmtree(item_path)
+
+#         os.rmdir(temp_dir)
+
+#         return JsonResponse({'message': 'Files extracted and saved successfully.', 'dta_data': [{'parent_folder': data['parent_folder'],'file_name': data['file_name'], 'tag_data': data['tag_data'], 'rule_category': data['rule_category'].name} for data in extracted_data_list]})
+
+#     return JsonResponse({'error': 'No zip file uploaded or invalid request method.'})
 
 # def extract_dta_files(folder_path):
 #     extracted_data = []

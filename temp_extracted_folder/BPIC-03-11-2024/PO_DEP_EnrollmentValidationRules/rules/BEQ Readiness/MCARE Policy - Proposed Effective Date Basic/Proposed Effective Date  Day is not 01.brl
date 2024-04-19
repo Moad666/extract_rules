@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Proposed Effective Date  Day is not 01</name>
+  <uuid>86f35f3a-0b12-49cf-a3bc-202c0f6382dc</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+    set 'Proposed Effective Date' to the application proposed effective date of the enrollment application submission of 'the odm consumer data request' ;
+if
+    'Proposed Effective Date' is not null
+    and 'Proposed Effective Date' is not empty
+    and Date format check of 'Proposed Effective Date' is true
+    and check 'Proposed Effective Date' a valid date is true
+    and Is ( convert 'Proposed Effective Date' to date ) first day of the month is false
+then
+    set the application proposed effective date of the enrollment application submission of 'the odm consumer data request' to Override First Day Of Month of 'Proposed Effective Date' ;
+    add the error message with ruleset name - "MCARE Policy - Proposed Effective Date Basic" , issue code "P0000023" , action code "A0000005" , from value of 'Proposed Effective Date' and to value of the application proposed effective date of the enrollment application submission of 'the odm consumer data response' for the Proposed Effective Date issue of 'the odm consumer data response' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

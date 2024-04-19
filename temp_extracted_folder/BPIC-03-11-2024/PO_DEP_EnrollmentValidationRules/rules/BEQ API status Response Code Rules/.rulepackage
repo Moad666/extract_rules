@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>BEQ API status Response Code Rules</name>
+  <uuid>d3235cde-e106-4b54-a2fb-24df467c6ae9</uuid>
+</ilog.rules.studio.model.base:RulePackage>

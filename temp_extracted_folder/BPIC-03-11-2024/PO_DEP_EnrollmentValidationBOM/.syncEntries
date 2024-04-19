@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><teamservers>
+<teamserver>
+<target dataSource="" login="rtsAdmin" url="http://localhost:9090/decisioncenter"/>
+<entry baseType="B2XMapping" checksum="1138273030" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidation_VirtualDomains" sourceCS="BFC22C4FC1A796CF7034AE70EDB1A2AB" targetCS="1138273030" type="B2XMapping" uuid="08826430-f8b7-4d9f-b4b4-6ded549d69a2"/>
+<entry baseType="B2XMapping" checksum="915408316" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationXOM" sourceCS="915561D6F580178912CA90C4C09A9FDC" targetCS="915408316" type="B2XMapping" uuid="3a2e8c90-ddd0-481a-9739-cd697946b657"/>
+<entry baseType="BusinessObjectModel" checksum="1138273030" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidation_VirtualDomains" sourceCS="497C9048153E55B368907BF7A93587A4" targetCS="1138273030" type="BusinessObjectModel" uuid="0867e761-4060-4e9d-adbb-2806cdd8afc6"/>
+<entry baseType="BusinessObjectModel" checksum="915408316" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationXOM" sourceCS="62AA7FABA4EBFCCEA532E75911DFDDE0" targetCS="915408316" type="BusinessObjectModel" uuid="b9b24de9-a5ab-4151-8191-ba36429b4ba9"/>
+<entry baseType="RuleProjectInfo" checksum="2818363843" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationBOM" sourceCS="87C82618F790A51D6A2E54130F61A32E" targetCS="2818363843" type="RuleProjectInfo" uuid="7e8793d2-2eb6-4bab-a446-c46d23eb4683"/>
+<entry baseType="VariableSet" checksum="4226471282" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="ApplicationSubmissionVarSet" sourceCS="2FEB4B09513E223BA817375A4CBE8578" targetCS="4226471282" type="VariableSet" uuid="bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+<entry baseType="Vocabulary" checksum="1138273030" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidation_VirtualDomains_en_US" sourceCS="27BE5A3D805AF72775F86D17F6A1D846" targetCS="1138273030" type="Vocabulary" uuid="3ace3947-0c96-453f-ac6d-1934c2281bb9"/>
+<entry baseType="Vocabulary" checksum="915408316" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationXOM_en_US" sourceCS="0C75FBE7022FA3ABC9060708E4239D60" targetCS="915408316" type="Vocabulary" uuid="d5eb7b4b-de4c-4425-86af-2f880fba3682"/>
+</teamserver>
+<teamserver>
+<target dataSource="" login="NNP5566" url="https://dev-bpicdc.humana.com/decisioncenter"/>
+<entry baseType="B2XMapping" checksum="915408316" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationXOM" sourceCS="915561D6F580178912CA90C4C09A9FDC" targetCS="915408316" type="B2XMapping" uuid="3a2e8c90-ddd0-481a-9739-cd697946b657"/>
+<entry baseType="BusinessObjectModel" checksum="1517651045" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationXOM" sourceCS="4B77C3AD6AEC32807D43A3889CC6D517" targetCS="1517651045" type="BusinessObjectModel" uuid="b9b24de9-a5ab-4151-8191-ba36429b4ba9"/>
+<entry baseType="Resource" checksum="2749636427" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="xom-libraries/PO_DEP_EnrollmentValidationXOM.zip" sourceCS="E2A40676BA0A304970FF28BEFE7EE2EE" targetCS="2749636427" type="Resource" uuid="xom-libraries/PO_DEP_EnrollmentValidationXOM.zip"/>
+<entry baseType="RuleProjectInfo" checksum="2083951119" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationBOM" sourceCS="56D450B4888E408D3743C2C7D5FA4BB4" targetCS="2083951119" type="RuleProjectInfo" uuid="7e8793d2-2eb6-4bab-a446-c46d23eb4683"/>
+<entry baseType="VariableSet" checksum="1469481073" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="DEPVariableSet" sourceCS="31D91A0E2E5A2127259F9E3E4F794236" targetCS="1469481073" type="VariableSet" uuid="bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+<entry baseType="Vocabulary" checksum="219129592" projectName="PO_DEP_EnrollmentValidationBOM" qualifiedName="PO_DEP_EnrollmentValidationXOM_en_US" sourceCS="EA067988AE64D256EB9E4196C9C6326A" targetCS="219129592" type="Vocabulary" uuid="d5eb7b4b-de4c-4425-86af-2f880fba3682"/>
+</teamserver>
+</teamservers>

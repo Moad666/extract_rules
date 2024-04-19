@@ -1,0 +1,760 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/PO_DEP_EnrollmentValidationBOM//PO_DEP_EnrollmentValidationXOM"
+property uuid "b9b24de9-a5ab-4151-8191-ba36429b4ba9"
+package com.humana.bpic.DEPEnrollmentValidation.request;
+
+
+public class AdditionalDemographics
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.Ethnicity ethnicity;
+    public java.lang.Boolean isHomeless;
+    public string maritalStatus;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Races races;
+    public string veteranStatus;
+    public AdditionalDemographics();
+}
+
+public class Ae409
+{
+    public string lk409FormTypeCode;
+    public boolean lk409GroupMcare;
+    public boolean lk409OsbForm;
+    public string shortForm;
+    public Ae409();
+}
+
+public class AeCode
+{
+    public java.util.List aeCode domain 0,* class string;
+    public string aeCodePlatformValue;
+    public string aeCodeValue;
+    public boolean noMorePerformatErrorsFlag;
+    public string platformCode;
+    public boolean ws03su10Error;
+    public boolean ws03su32Error;
+    public string ws03su65Error;
+    public AeCode();
+}
+
+public class AgentsAndBrokers
+{
+    public string agentBrokerEmailAddress;
+    public string agentBrokerId;
+    public string agentBrokerName;
+    public string agentBrokerSocialSecurityNumber;
+    public string agentBrokerType;
+    public AgentsAndBrokers();
+}
+
+public class ApplicationSignature
+{
+    public string applicationSignatureTime;
+    public string applicationSignatureType;
+    public string applicationTelephoneSignatureId;
+    public string applicationTelephoneSignatureVoiceLogId;
+    public string signedBy;
+    public string signedDate;
+    public ApplicationSignature();
+}
+
+public class BankPayment
+{
+    public string bankAccountBankName;
+    public string bankAccountHolderName;
+    public string bankAccountNumber;
+    public string bankAccountTransitNumber;
+    public string bankAccountType;
+    public BankPayment();
+}
+
+public class Biometrics
+{
+    public double height;
+    public double weight;
+    public Biometrics();
+}
+
+public class CardPayment
+{
+    public string cardExpirationDate;
+    public string cardHolderName;
+    public string cardToken;
+    public string cardTypeCode;
+    public CardPayment();
+}
+
+public class CardiovascularDisease
+{
+    public boolean hasCirculationProblems;
+    public boolean hasHeartProblems;
+    public boolean hasLegPain;
+    public CardiovascularDisease();
+}
+
+public class CarrierAddress
+{
+    public string addressLine1;
+    public string addressLine2;
+    public string addressLine3;
+    public string addressLine4;
+    public string city;
+    public string countryCode;
+    public string county;
+    public string countyCode;
+    public string postalCode;
+    public string postalCodePlus;
+    public string stateOrProvince;
+    public CarrierAddress();
+}
+
+public class ChronicConditions
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.CardiovascularDisease cardiovascularDisease;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Diabetes diabetes;
+    public com.humana.bpic.DEPEnrollmentValidation.request.HeartFailure heartFailure;
+    public com.humana.bpic.DEPEnrollmentValidation.request.LungDisease lungDisease;
+    public ChronicConditions();
+}
+
+public class CommunicationPreferences
+{
+    public string preferredAlternateCommunicationFormat;
+    public string preferredCommunicationMethod;
+    public string preferredVerbalLanguage;
+    public string preferredWrittenLanguage;
+    public CommunicationPreferences();
+}
+
+public class Conditions
+{
+    public boolean hasDisability;
+    public java.lang.Boolean isSmoker;
+    public Conditions();
+}
+
+public class ConsentDates
+{
+    public string endDate;
+    public string startDate;
+    public ConsentDates();
+}
+
+public class ConsentSignature
+{
+    public string signedBy;
+    public string signedDate;
+    public ConsentSignature();
+}
+
+public class Consents
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.ConsentDates consentDates;
+    public string consentDisclosureType;
+    public com.humana.bpic.DEPEnrollmentValidation.request.ConsentSignature consentSignature;
+    public string consentSource;
+    public java.util.List limitedDisclosureProductType domain 0,* class string;
+    public string limitedDisclosureStatement;
+    public Consents();
+}
+
+public class Consumers
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.AdditionalDemographics additionalDemographics;
+    public java.util.List aeiaGhiMemberRecordLayout domain 0,* class string;
+    public int age;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Biometrics biometrics;
+    public java.util.List chronicConditions domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.ChronicConditions;
+    public com.humana.bpic.DEPEnrollmentValidation.request.CommunicationPreferences communicationPreferences;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Conditions conditions;
+    public com.humana.bpic.DEPEnrollmentValidation.request.ContactInformation contactInformation;
+    public string dateOfBirthDate;
+    public string deceasedDate;
+    public java.util.List designees domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.Designees;
+    public boolean diabetes;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Eligibility eligibility;
+    public string employmentStatusCode;
+    public java.util.List externalContacts domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.ExternalContacts;
+    public string extoutMemberStatus;
+    public string firstName;
+    public string formTypeCode;
+    public string govtSalesSSN;
+    public string govtSourceCode;
+    public boolean groupMedSup;
+    public string homeAddress;
+    public boolean individualMedSup;
+    public string individualRelationshipCode;
+    public java.util.List internalIdentifiers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.InternalIdentifiers;
+    public string lastName;
+    public com.humana.bpic.DEPEnrollmentValidation.request.LongTermCare longTermCare;
+    public string memberGenderCode;
+    public string middleInitial;
+    public string middleName;
+    public string msupWaSSN;
+    public java.util.List officialIdentifiers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers;
+    public string oldCategoryId;
+    public java.util.List optionalSupplementalBenefits domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.OptionalSupplementalBenefits;
+    public boolean osteo;
+    public java.util.List otherCoverages domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.OtherCoverages;
+    public com.humana.bpic.DEPEnrollmentValidation.request.OtherInsurances otherInsurances;
+    public java.util.List paymentPreferences domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.PaymentPreferences;
+    public java.util.List plans domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.Plans;
+    public string prefix;
+    public java.util.List providers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.Providers;
+    public string referenceIdentificationQualifier;
+    public string rfmCategoryKey;
+    public string rfmGovtSalesSSN;
+    public java.util.List rfmGroupId domain 0,* class string;
+    public string sex;
+    public string sexCode;
+    public string stokRecordTypeHeader;
+    public string subSaveSSN;
+    public string subscriberSSN;
+    public string suffix;
+    public int wsCount1;
+    public int wsCount2;
+    public Consumers();
+}
+
+public class ContactAddress
+{
+    public string addressLine1;
+    public string addressLine2;
+    public string addressLine3;
+    public string addressLine4;
+    public string addressType;
+    public string city;
+    public string countryCode;
+    public string county;
+    public string countyCode;
+    public string postalCode;
+    public string postalCodePlus;
+    public string stateOrProvince;
+    public ContactAddress();
+}
+
+public class ContactInformation
+{
+    public java.util.List emailAddresses domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.EmailAddresses;
+    public java.lang.Boolean isResidenceAddressSameAsMailing;
+    public java.util.List phoneNumbers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.PhoneNumbers;
+    public java.util.List postalAddresses domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.PostalAddresses;
+    public ContactInformation();
+}
+
+public class CoveragePeriod
+{
+    public string effectiveDate;
+    public string endDate;
+    public CoveragePeriod();
+}
+
+public class Designees
+{
+    public string addressInformation;
+    public string am555Country;
+    public java.util.List consents domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.Consents;
+    public string dateOfBirthDate;
+    public string designeeRole;
+    public string designeeType;
+    public java.util.List emailAddresses domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.EmailAddresses;
+    public string fipsResd;
+    public string firstName;
+    public string lastName;
+    public string middleInitial;
+    public string middleName;
+    public string organizationName;
+    public java.util.List phoneNumbers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.PhoneNumbers;
+    public java.util.List postalAddresses domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.DesigneesPostalAddresses;
+    public string powerOfAttorneyType;
+    public string prefix;
+    public string relationshipType;
+    public string suffix;
+    public Designees();
+}
+
+public class DesigneesPostalAddresses
+{
+    public string addressLine1;
+    public string addressLine2;
+    public string addressLine3;
+    public string addressLine4;
+    public string addressType;
+    public string city;
+    public string countryCode;
+    public string county;
+    public string countyCode;
+    public string postalCode;
+    public string postalCodePlus;
+    public string stateOrProvince;
+    public DesigneesPostalAddresses();
+}
+
+public class Diabetes
+{
+    public boolean hasHighBloodSugar;
+    public boolean hasInsulinOralMedication;
+    public boolean monitorsBloodSugar;
+    public Diabetes();
+}
+
+public class Eligibility
+{
+    public string cmsContractId;
+    public string cmsPBPId;
+    public string mcarePartAEligibilityDate;
+    public boolean medicareEligible;
+    public string medicarePartAIndicator;
+    public string medicarePartBEligibilityDate;
+    public string memberEndDate;
+    public string memberStartDate;
+    public string rfmMedicareElectionTypeCode;
+    public string rfmMemberMartialStatus;
+    public string specialReasonCode;
+    public string temporaryDate;
+    public Eligibility();
+}
+
+public class EmailAddresses
+{
+    public string emailAddress;
+    public string emailAddressType;
+    public EmailAddresses();
+}
+
+public class EnrollmentApplicationSubmission
+{
+    public string applicationEnrollmentSourceCode;
+    public string applicationProposedEffectiveDate;
+    public com.humana.bpic.DEPEnrollmentValidation.request.ApplicationSignature applicationSignature;
+    public string applicationSubmittedId;
+    public string applicationSubmittedTimestamp;
+    public string applicationType;
+    public string coverageTerminationDate;
+    public string documentControlNumber;
+    public string electionType;
+    public string enrollmentPlanYear;
+    public java.util.List enrollmentSystemCodes domain 0,* class string;
+    public com.humana.bpic.DEPEnrollmentValidation.request.FileInformation fileInformation;
+    public string marketReceivedTimestamp;
+    public string onlineEnrollmentCenterConfirmationId;
+    public string scopeOfAppointmentId;
+    public string scopeOfAppointmentLocationType;
+    public string scopeOfAppointmentSource;
+    public com.humana.bpic.DEPEnrollmentValidation.request.SpecialElectionPeriodException specialElectionPeriodException;
+    public string submitDate;
+    public string submitMonth;
+    public string submitYear;
+    public EnrollmentApplicationSubmission();
+}
+
+public class ErrorHandling
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.Ae409 ae409;
+    public com.humana.bpic.DEPEnrollmentValidation.request.AeCode aeCode;
+    public com.humana.bpic.DEPEnrollmentValidation.request.ErrorRecord errorRecord;
+    public com.humana.bpic.DEPEnrollmentValidation.request.SystemsFiller systemesFiller;
+    public ErrorHandling();
+}
+
+public class ErrorRecord
+{
+    public string attachFlag;
+    public string errorNumber;
+    public string errorRecord;
+    public java.lang.Integer errorRecordProcessed;
+    public string errorSystemCode;
+    public string outputPreformattedErrorRecord;
+    public string performDiseaseCode;
+    public string preformatErrorRecord;
+    public java.lang.Integer snpdCount;
+    public string snpdLongDescription;
+    public boolean su35;
+    public ErrorRecord();
+}
+
+public class Ethnicity
+{
+    public string aeiaEthnicityCode;
+    public int amEthyIndex;
+    public string amPlatform;
+    public java.util.List amTableValueE domain 0,* class string;
+    public java.util.List amTableValueME domain 0,* class string;
+    public java.util.List amenty domain 0,* class string;
+    public java.util.List amentyTableValueE domain 0,* class string;
+    public string ethnicityInformation;
+    public string inputEthnicityCode;
+    public string occurrenceEthnicityCode;
+    public string outputEthnicityCode;
+    public string reformatEthnicityCode;
+    public string rfmMemberEthnicityCode;
+    public string stflEthnicityCode;
+    public int totalCommitCount;
+    public string wsCountE;
+    public string wsEthnicityCode;
+    public string wscountWrite1;
+    public Ethnicity();
+}
+
+public class ExternalContacts
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.ContactAddress contactAddress;
+    public string contactPersonType;
+    public string contactRelationship;
+    public string emailAddress;
+    public string firstName;
+    public string lastName;
+    public string middleInitial;
+    public string middleName;
+    public java.util.List phoneNumbers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.PhoneNumbers;
+    public string prefix;
+    public string suffix;
+    public ExternalContacts();
+}
+
+public class FileInformation
+{
+    public string fileProcessingStartTimestamp;
+    public string fileSentTimestamp;
+    public FileInformation();
+}
+
+public class HeartFailure
+{
+    public boolean hasFluidInHeart;
+    public boolean hasHeartFailure;
+    public boolean hasLegSwelling;
+    public HeartFailure();
+}
+
+public class InLongTermCarePeriod
+{
+    public string endDate;
+    public string startDate;
+    public InLongTermCarePeriod();
+}
+
+public class InternalIdentifiers
+{
+    public string identifierType;
+    public string identifierValue;
+    public InternalIdentifiers();
+}
+
+public class LongTermCare
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.InLongTermCarePeriod inLongTermCarePeriod;
+    public java.lang.Boolean isInLongTermCare;
+    public com.humana.bpic.DEPEnrollmentValidation.request.LongTermCareFacilityAddress longTermCareFacilityAddress;
+    public string longTermCareFacilityName;
+    public string longTermCareFacilityPhoneNumber;
+    public string longTermCareLocationType;
+    public string organizationId;
+    public LongTermCare();
+}
+
+public class LongTermCareFacilityAddress
+{
+    public string addressLine1;
+    public string addressLine2;
+    public string addressLine3;
+    public string addressLine4;
+    public string city;
+    public string countryCode;
+    public string county;
+    public string countyCode;
+    public string postalCode;
+    public string postalCodePlus;
+    public string stateOrProvince;
+    public LongTermCareFacilityAddress();
+}
+
+public class LungDisease
+{
+    public boolean hasBreathingProblem;
+    public boolean hasLungProblem;
+    public boolean usesInhaler;
+    public LungDisease();
+}
+
+public class Message
+{
+    public string actionCode;
+    public string actionDescription;
+    public string fromValue;
+    public string issueCode;
+    public string issueDescription;
+    public string ruleSetName;
+    public string toValue;
+    public string type;
+    public Message();
+}
+
+public class ODMConsumerDataRequest
+{
+    public java.util.List agentsAndBrokers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.AgentsAndBrokers;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Consumers consumers;
+    public com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission enrollmentApplicationSubmission;
+    public com.humana.bpic.DEPEnrollmentValidation.request.PartnerAndMarketing partnerAndMarketing;
+    public string transactionTrackingId;
+    public ODMConsumerDataRequest();
+}
+
+public class OfficialIdentifiers
+{
+    public string identifierCode;
+    public string identifierDefinition;
+    public string identifierIssuingAuthority;
+    public string identifierValue;
+    public OfficialIdentifiers();
+}
+
+public class OptionalSupplementalBenefits
+{
+    public string optionalSupplementalBenefitPackageDescription;
+    public string optionalSupplementalBenefitPackageId;
+    public double optionalSupplementalBenefitPremiumAmount;
+    public string optionalSupplementalBenefitStartDate;
+    public OptionalSupplementalBenefits();
+}
+
+public class OtherCoverages
+{
+    public string adminGroupXref;
+    public string administratorNumber;
+    public string batchReceiptDate;
+    public java.util.List benefitCodes domain 0,* class string;
+    public string benefitEndDate;
+    public string benefitEndReasonCode;
+    public string benefitLine;
+    public string benefitStatusCode;
+    public com.humana.bpic.DEPEnrollmentValidation.request.CarrierAddress carrierAddress;
+    public string carrierId;
+    public string carrierName;
+    public string carrierPayerSequenceType;
+    public string carrierPhoneNumber;
+    public java.lang.Integer ciCoverageAgreementId;
+    public string coverageGroupId;
+    public com.humana.bpic.DEPEnrollmentValidation.request.CoveragePeriod coveragePeriod;
+    public string coveragePolicyNumber;
+    public string groupMedicalSupplements;
+    public string healthPlanCoverageDescription;
+    public java.lang.Boolean isPrescriptionCoveredAsPartOfMedicalCoverage;
+    public string lineOfCoverage;
+    public string maintenanceReasonCode;
+    public string marketReceiptDate;
+    public string medicareElectionTypeCode;
+    public string memberBenefitDate;
+    public string memberBenefitTerm;
+    public string outputCoverageTermReasonCode;
+    public string retirementDate;
+    public java.util.List rfmBenefitId domain 0,* class string;
+    public string rfmBenefitLine;
+    public java.util.List rfmCiCategoryKey domain 0,* class string;
+    public string rfmCoverageTermDate;
+    public string snpTypeCode;
+    public com.humana.bpic.DEPEnrollmentValidation.request.StandardDailyLayout standardDailyLayout;
+    public string transactionType;
+    public OtherCoverages();
+}
+
+public class OtherInsurances
+{
+    public string medicarePartAEnrollmentDate;
+    public string medicarePartBEnrollmentDate;
+    public OtherInsurances();
+}
+
+public class PartnerAndMarketing
+{
+    public string marketingCampaign;
+    public string marketingLeadSourceCode;
+    public string partnerApplicationId;
+    public string partnerId;
+    public string partnerLocationId;
+    public string partnerName;
+    public PartnerAndMarketing();
+}
+
+public class PaymentPreferences
+{
+    public com.humana.bpic.DEPEnrollmentValidation.request.BankPayment bankPayment;
+    public com.humana.bpic.DEPEnrollmentValidation.request.CardPayment cardPayment;
+    public string paymentCategory;
+    public string paymentFrequency;
+    public string paymentMethodType;
+    public double paymentMonthlyPremiumAmount;
+    public PaymentPreferences();
+}
+
+public class PhoneNumbers
+{
+    public string phoneNumber;
+    public string phoneNumberExtension;
+    public string phoneNumberType;
+    public PhoneNumbers();
+}
+
+public class Plans
+{
+    public string benefitSequenceNumber;
+    public string contractNumber;
+    public string groupId;
+    public string lineOfBusiness;
+    public string lineOfCoverage;
+    public string planBenefitPackageNumber;
+    public double planCostPremiumAmount;
+    public string planName;
+    public string segmentNumber;
+    public Plans();
+}
+
+public class PostalAddresses
+{
+    public string addressLine1;
+    public string addressLine2;
+    public string addressLine3;
+    public string addressLine4;
+    public string addressType;
+    public string city;
+    public string countryCode;
+    public string county;
+    public string countyCode;
+    public string effectiveDate;
+    public string postalCode;
+    public string postalCodePlus;
+    public string stateOrProvince;
+    public PostalAddresses();
+}
+
+public class ProviderAddress
+{
+    public string addressLine1;
+    public string addressLine2;
+    public string addressLine3;
+    public string addressLine4;
+    public string city;
+    public string countryCode;
+    public string county;
+    public string countyCode;
+    public string postalCode;
+    public string postalCodePlus;
+    public string stateOrProvince;
+    public ProviderAddress();
+}
+
+public class Providers
+{
+    public java.util.List associatedChronicConditionType domain 0,* class string;
+    public string firstName;
+    public java.lang.Boolean isEstablishedPatientForProvider;
+    public string lastName;
+    public string middleInitial;
+    public string middleName;
+    public string nationalProviderIdentifier;
+    public string prefix;
+    public com.humana.bpic.DEPEnrollmentValidation.request.ProviderAddress providerAddress;
+    public string providerDisplayName;
+    public string providerId;
+    public string providerRelationType;
+    public string providerValidationDate;
+    public string providerValidationStatusCode;
+    public string rfmScanDate;
+    public string suffix;
+    public Providers();
+}
+
+public class Races
+{
+    public string aeiaRaceCode;
+    public java.util.List amHoldRaceValue domain 0,* class string;
+    public string amPlatform;
+    public java.util.List amPlatformValueR domain 0,* class string;
+    public java.util.List amRace domain 0,* class string;
+    public int amRaceIndex;
+    public string amTableValueM;
+    public string amTableValueR;
+    public string inputRaceCode;
+    public string occurrenceRaceCode;
+    public string outputRaceCode;
+    public string raceInformation;
+    public string rfmRaceCode;
+    public string stflRaceCode;
+    public string wsCountR;
+    public string wsCtrR;
+    public string wsRaceCode;
+    public Races();
+}
+
+public class SpecialElectionPeriodException
+{
+    public string customerComment1TypeCode;
+    public string disasterElectionType;
+    public string disasterSpecialElectionPeriodDate;
+    public string disasterSpecialElectionPeriodEmergencyReason;
+    public string disasterSpecialElectionPeriodReason;
+    public string disasterSpecialElectionPeriodReasonType;
+    public string sepReasonCode;
+    public string specialElectionPeriodDate;
+    public string specialElectionPeriodReason;
+    public string specialElectionPeriodReasonType;
+    public SpecialElectionPeriodException();
+}
+
+public class StandardDailyLayout
+{
+    public string adminPartyKey;
+    public string coverageEffectiveDate;
+    public string coverageLine;
+    public string coverageTerminationDate;
+    public string customerComment;
+    public string groupKey;
+    public string memberOtherCountryCode;
+    public string paramJob;
+    public string rfmAdminPartyKey;
+    public string rfmCoverageTermReasonCode;
+    public string rfmCoverageTerminationReasonCode;
+    public string rfmEthnicityCode;
+    public string rfmGovernmentTransmitStatus;
+    public string rfmGroupkey;
+    public string rfmRaceCode;
+    public StandardDailyLayout();
+}
+
+public class SystemsFiller
+{
+    public string contactRelationship;
+    public string systemsFiller;
+    public java.util.List systemsFillerList domain 0,* class string;
+    public SystemsFiller();
+}
+
+package com.humana.bpic.DEPEnrollmentValidation.response;
+
+
+public class ODMConsumerDataResponse
+{
+    public java.util.List agentsAndBrokers domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.AgentsAndBrokers;
+    public com.humana.bpic.DEPEnrollmentValidation.request.Consumers consumers;
+    public com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission enrollmentApplicationSubmission;
+    public java.util.List messageList domain 0,* class com.humana.bpic.DEPEnrollmentValidation.request.Message;
+    public com.humana.bpic.DEPEnrollmentValidation.request.PartnerAndMarketing partnerAndMarketing;
+    public java.util.Date transactionDateTimeStamp;
+    public string transactionTrackingId;
+    public boolean validDemographicDOBUsableFlag;
+    public boolean validMcarePolicyProposedEffectiveDateUsableFlag;
+    public boolean validOfficialIdentifierMBIUsableFlag;
+    public ODMConsumerDataResponse();
+}
+
+package com.humana.bpic.DEPEnrollmentValidation.utility;
+
+
+public class DEPEnrollmentHelper
+{
+    public DEPEnrollmentHelper();
+    public static void addDOBErrors(string arg1, string arg2, string arg3, string arg4, string arg5, com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse arg6);
+    public static void addMBIErrors(string arg1, string arg2, string arg3, string arg4, string arg5, com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse arg6);
+    public static void addProposedEffectiveDateErrors(string arg1, string arg2, string arg3, string arg4, string arg5, com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse arg6);
+}
+

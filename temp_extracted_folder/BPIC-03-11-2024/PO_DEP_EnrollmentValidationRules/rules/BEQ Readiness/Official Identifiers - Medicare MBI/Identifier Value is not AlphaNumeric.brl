@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Identifier Value is not AlphaNumeric</name>
+  <uuid>91d6e1c4-de3a-4445-8c64-402e95c7d4ce</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+    set 'official identifier' to an official identifiers in the official identifiers of the consumers of 'the odm consumer data request' ;
+    set 'identifierCode' to the identifier code of 'official identifier' ;
+    set 'identifierValue' to the identifier value of 'official identifier' ;
+    set 'removeSpecialCharacters' to remove special characters and space 'identifierValue' ;
+if
+    'identifierCode' is "MC"
+    and 'identifierValue' is not null
+    and 'identifierValue' is not empty
+    and AlphaNumeric validation of 'identifierValue' is false
+then
+    set the identifier value of 'official identifier' to 'removeSpecialCharacters' ;
+    add the error message with ruleset name - "Official Identifiers - Medicare MBI" , issue code "P0000003" , action code "A0000001" , from value of identifierValue and to value of the identifier value of 'official identifier' for the MBI issue of 'the odm consumer data response' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

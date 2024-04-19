@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?><impactTables>
+    <ruleTable>
+        <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0">
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse/transactionTrackingId/SETTER#0">
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/SETTER#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/getFirstDateOfTheMonth(java.util.Date)/NAVIGATION#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0">
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/convertStringToDateFormat(java.lang.String)/NAVIGATION#0">
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers">
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.StringUtility/toUpper(java.lang.String)/NAVIGATION#0">
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/isInputDateFutureDate(java.util.Date)/NAVIGATION#0">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.StringUtility/isStringLowerCase(java.lang.String)/NAVIGATION#0">
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0">
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0">
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.StringUtility/removeSpecialCharactersAndSpace(java.lang.String)/NAVIGATION#0">
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/subtractDaysFromADate(java.util.Date,int)/NAVIGATION#0">
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0">
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0">
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.StringUtility/isValidMedicareId(java.lang.String)/NAVIGATION#0">
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse/enrollmentApplicationSubmission/GETTER#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0">
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/currentDate()/NAVIGATION#0">
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.POUtitlity/calculateAge(java.util.Date)/NAVIGATION#0">
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/transactionTrackingId/GETTER#0">
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0">
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/SETTER#0">
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.POUtitlity/convertStringToInteger(java.lang.String)/NAVIGATION#0">
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+        </vocElt>
+        <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/GETTER#0">
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/addDaystoDate(java.util.Date,int)/NAVIGATION#0">
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.POUtitlity/isNumeric(java.lang.String)/NAVIGATION#0">
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.DateUtility/OverrideFirstDayOfMonth(java.lang.String)/NAVIGATION#0">
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+        </vocElt>
+        <vocElt id="com.humana.odm.utility.POUtitlity/isAlphaNumeric(java.lang.String)/NAVIGATION#0">
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocElt>
+    </ruleTable>
+    <vocTable>
+        <rule id="244a40e2-7540-425a-891f-963cab246ff5">
+            <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/convertStringToDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/isInputDateFutureDate(java.util.Date)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+        </rule>
+        <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d">
+            <vocElt id="com.humana.odm.utility.StringUtility/removeSpecialCharactersAndSpace(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/isNumeric(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+        <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/isValidMedicareId(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+        <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+        <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423">
+            <vocElt id="com.humana.odm.utility.DateUtility/convertStringToDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/subtractDaysFromADate(java.util.Date,int)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/currentDate()/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/addDaystoDate(java.util.Date,int)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25">
+            <vocElt id="com.humana.odm.utility.StringUtility/removeSpecialCharactersAndSpace(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/isNumeric(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+        <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87">
+            <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/convertStringToDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/subtractDaysFromADate(java.util.Date,int)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/currentDate()/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/addDaystoDate(java.util.Date,int)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse/transactionTrackingId/SETTER#0"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/convertStringToInteger(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/transactionTrackingId/GETTER#0"/>
+        </rule>
+        <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447">
+            <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/convertStringToDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/calculateAge(java.util.Date)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+        </rule>
+        <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+        </rule>
+        <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc">
+            <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/convertStringToDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/SETTER#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/getFirstDateOfTheMonth(java.util.Date)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/OverrideFirstDayOfMonth(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+        <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/removeSpecialCharactersAndSpace(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/isNumeric(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+        </rule>
+        <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db">
+            <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+        </rule>
+        <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/SETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/toUpper(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/isStringLowerCase(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+        <rule id="21249667-be73-4c39-bb63-357f1aa4c188">
+            <vocElt id="com.humana.odm.utility.DateUtility/checkValidCalendarDate(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addProposedEffectiveDateErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.odm.utility.DateUtility/checkDateFormat(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.EnrollmentApplicationSubmission/applicationProposedEffectiveDate/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/enrollmentApplicationSubmission/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+        </rule>
+        <rule id="52eb616a-325c-435b-ad63-6f834f117364">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/dateOfBirthDate/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/removeSpecialCharactersAndSpace(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/isNumeric(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/getStringLength(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addDOBErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+        </rule>
+        <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce">
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.Consumers/officialIdentifiers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierCode/GETTER#0"/>
+            <vocElt id="com.humana.odm.utility.StringUtility/removeSpecialCharactersAndSpace(java.lang.String)/NAVIGATION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/SETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest/consumers/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.OfficialIdentifiers/identifierValue/GETTER#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.utility.DEPEnrollmentHelper/addMBIErrors(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse)/ACTION#0"/>
+            <vocElt id="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest"/>
+            <vocElt id="com.humana.odm.utility.POUtitlity/isAlphaNumeric(java.lang.String)/NAVIGATION#0"/>
+        </rule>
+    </vocTable>
+    <ruleParamTable>
+        <param id="request">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </param>
+        <param id="response">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </param>
+    </ruleParamTable>
+    <paramTable>
+        <rule id="244a40e2-7540-425a-891f-963cab246ff5">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="21249667-be73-4c39-bb63-357f1aa4c188">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="52eb616a-325c-435b-ad63-6f834f117364">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+        <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce">
+            <param id="request"/>
+            <param id="response"/>
+        </rule>
+    </paramTable>
+    <projectTable/>
+    <variableTable>
+        <param id="bb1ed548-66cb-4343-a82d-ddcd890ae374">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </param>
+    </variableTable>
+    <ruleVocFileTable>
+        <vocFile file="/PO_DEP_EnrollmentValidationBOM/bom/PO_DEP_EnrollmentValidationXOM_en_US.voc" id="d5eb7b4b-de4c-4425-86af-2f880fba3682">
+            <rule id="244a40e2-7540-425a-891f-963cab246ff5"/>
+            <rule id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+            <rule id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+            <rule id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+            <rule id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+            <rule id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+            <rule id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+            <rule id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+            <rule id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+            <rule id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+            <rule id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+            <rule id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+            <rule id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+            <rule id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+            <rule id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+            <rule id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+            <rule id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+            <rule id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+            <rule id="52eb616a-325c-435b-ad63-6f834f117364"/>
+            <rule id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        </vocFile>
+        <vocFile file="/PO_ODM_Utility_BOM/bom/PO_ODM_Utility_XOM_en_US.voc" id="89f1262b-b163-4f39-b233-f0ca55d33c8b">
+            <rule id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+        </vocFile>
+    </ruleVocFileTable>
+    <resourceTable>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Official Identifiers Count.brl" id="83dc7d49-ff94-4550-9fcf-6a7845533d80"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/MCARE Policy - Proposed Effective Date Basic/Proposed Effective Date is not a Calendar date.brl" id="21249667-be73-4c39-bb63-357f1aa4c188"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Identifier Value is not AlphaNumeric.brl" id="91d6e1c4-de3a-4445-8c64-402e95c7d4ce"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/MCARE Policy - Proposed Effective Date Basic/Out of Bound Proposed Effective Date.brl" id="0e05b683-78e3-4739-a848-3c5ddc944b87"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Demographics - DOB/Date of Birth is Future Date.brl" id="244a40e2-7540-425a-891f-963cab246ff5"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Demographics - DOB/Age is Over 120 Years.brl" id="c6cda370-1f53-4f73-bc46-2f2cb8279447"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Demographics - DOB/Date of Birth is Null.brl" id="3b13acd8-d843-4d5d-8886-2e1dea22151b"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Identifier Value Contains Lower Case.brl" id="a735a921-10ba-4ce0-92b2-c2fa0c97ad64"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/Dummy Rules For Exception Flow/Dummy Null Pointer Check.brl" id="9c35bd3c-fba5-4113-b1ee-816069b25423"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Demographics - DOB/Date of Birth is not a Calendar Date.brl" id="83b9b059-d83d-4b16-ae2a-3eaac55d99db"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Demographics - DOB/Date of Birth is not in ISO Format.brl" id="3c5a06a0-f9b3-4bef-94fb-bd32cf94001b"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Identifier Code is not MC.brl" id="fd9e95d4-edca-47ab-aca4-49e434bf5f18"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Identifier Value CMS Fomat Edit Check.brl" id="962389d8-523c-4cc8-9775-b99fb68f8fa8"/>
+        <resource file="/PO_DEP_EnrollmentValidationBOM/rules/DEPVariableSet.var" id="bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/MCARE Policy - Proposed Effective Date Basic/Proposed Effective Date  Day is not 01.brl" id="86f35f3a-0b12-49cf-a3bc-202c0f6382dc"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/MCARE Policy - Proposed Effective Date Basic/Proposed Effective Date is Null.brl" id="b78954bd-ea81-44f8-809d-6b9dcffd97a0"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/MCARE Policy - Proposed Effective Date Basic/Proposed Effective Date is not in ISO Format.brl" id="361ae8fa-d77d-4f9a-9f69-b63ed02af56d"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Identifier Value is Null.brl" id="6f56f8fa-4b56-452e-ae7d-b123f24fb997"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/MCARE Policy - Proposed Effective Date Basic/Proposed Effective Date Doesn't Contain 8 Numbers.brl" id="27e1b4df-ad4d-4945-be90-e1a859f20e25"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Demographics - DOB/Date of Birth Doesn't Contain 8 Numbers.brl" id="52eb616a-325c-435b-ad63-6f834f117364"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/BEQ Readiness/Official Identifiers - Medicare MBI/Identifier Value Length Check.brl" id="e0c171bb-2f67-49a9-a2a6-e33e914d6e62"/>
+        <resource file="/PO_DEP_EnrollmentValidationRules/rules/Dummy Rules For Exception Flow/Dummy Divide by Zero at condition.brl" id="9487a9b2-cc81-47b0-bf3d-1b877a26387f"/>
+    </resourceTable>
+</impactTables>

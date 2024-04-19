@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.query:Query xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore">
+  <name>Medicare Tag rules</name>
+  <uuid>f8f3a57a-b1e5-4c90-83c0-3d3099ff41a1</uuid>
+  <definition><![CDATA[Find all business rules
+    such that the tag "MedicareKey" of each business rule contains ""]]></definition>
+  <locale>en_US</locale>
+</ilog.rules.studio.model.query:Query>

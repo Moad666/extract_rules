@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>DEPVariableSet</name>
+  <uuid>bb1ed548-66cb-4343-a82d-ddcd890ae374</uuid>
+  <variables name="request" type="com.humana.bpic.DEPEnrollmentValidation.request.ODMConsumerDataRequest" initialValue="" verbalization="the odm consumer data request"/>
+  <variables name="response" type="com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse" initialValue="new com.humana.bpic.DEPEnrollmentValidation.response.ODMConsumerDataResponse()" verbalization="the odm consumer data response"/>
+  <variables name="executionPath" type="java.lang.String" initialValue="" verbalization="the execution path"/>
+</ilog.rules.studio.model.base:VariableSet>

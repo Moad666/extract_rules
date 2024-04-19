@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><impactTables>
+    <ruleTable>
+        <vocElt id="com.humana.odm.utility.StringUtility/compareStringIgnoringCase(java.lang.String,java.lang.String)/NAVIGATION#0">
+            <rule id="403e4463-22f8-403b-bce2-cbf484319034"/>
+        </vocElt>
+    </ruleTable>
+    <vocTable>
+        <rule id="403e4463-22f8-403b-bce2-cbf484319034">
+            <vocElt id="com.humana.odm.utility.StringUtility/compareStringIgnoringCase(java.lang.String,java.lang.String)/NAVIGATION#0"/>
+        </rule>
+    </vocTable>
+    <ruleParamTable>
+        <param id="executionPath">
+            <rule id="403e4463-22f8-403b-bce2-cbf484319034"/>
+        </param>
+    </ruleParamTable>
+    <paramTable>
+        <rule id="403e4463-22f8-403b-bce2-cbf484319034">
+            <param id="executionPath"/>
+        </rule>
+    </paramTable>
+    <projectTable/>
+    <variableTable>
+        <param id="bb1ed548-66cb-4343-a82d-ddcd890ae374">
+            <rule id="403e4463-22f8-403b-bce2-cbf484319034"/>
+        </param>
+    </variableTable>
+    <ruleVocFileTable>
+        <vocFile file="/PO_ODM_Utility_BOM/bom/PO_ODM_Utility_XOM_en_US.voc" id="89f1262b-b163-4f39-b233-f0ca55d33c8b">
+            <rule id="403e4463-22f8-403b-bce2-cbf484319034"/>
+        </vocFile>
+    </ruleVocFileTable>
+    <resourceTable>
+        <resource file="/PO_DEP_EnrollmentValidationDecisionService/rules/DEP Main Flow.rfl" id="403e4463-22f8-403b-bce2-cbf484319034"/>
+        <resource file="/PO_DEP_EnrollmentValidationBOM/rules/DEPVariableSet.var" id="bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+    </resourceTable>
+</impactTables>

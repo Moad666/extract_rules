@@ -1,0 +1,189 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/PO_ODM_Utility_BOM//PO_ODM_Utility_XOM"
+property uuid "48a7eb4a-331f-4bf0-ba13-6fd50114a2fd"
+package com.humana.odm.utility;
+
+
+public final class CommonUtility
+{
+    public CommonUtility();
+    public static java.lang.Integer SetNullNumber(java.lang.Integer arg);
+    public static boolean areEquals(string arg1, string arg2);
+    public static int calculateAge(java.util.Date arg);
+    public static int calculateAgeAtEffectiveDate(java.util.Date arg1, java.util.Date arg2);
+    public static float calculatePercentage(int arg1, int arg2);
+    public static java.util.Date currentDate();
+    public static int incrementNumber(int arg1, int arg2);
+    public static boolean isAlphaNumeric(string arg);
+    public static boolean isAlphabetic(string arg);
+    public static boolean isBigDecimalZero(java.math.BigDecimal arg);
+    public static boolean isEmailAddressValid(string arg);
+    public static boolean isInteger(java.lang.Integer arg);
+    public static boolean isInteger(string arg);
+    public static boolean isNullNumber(java.lang.Integer arg);
+    public static boolean isSpecialCharacters(string arg);
+    public static boolean isThreeDigitAreaCodeValid(string arg);
+    public static boolean isValidSSN(string arg);
+    public static boolean isValidUSStateCode(string arg);
+    public static boolean isValidZipCode(string arg);
+    public static boolean isWhiteSpace(string arg);
+    public static int yearsOfService(java.util.Date arg);
+}
+
+public final class DateUtility
+{
+    public DateUtility();
+    public static string DatetoString(java.util.Date arg);
+    public static java.lang.Boolean IsEffectiveEndDateOpenEnded(java.util.Date arg);
+    public static string OverrideFirstDayOfMonth(string arg);
+    public static java.util.Date addBusinessDays(java.util.Date arg1, int arg2);
+    public static java.util.Date addDaystoDate(java.util.Date arg1, int arg2);
+    public static java.util.Date addProvisionCount(java.util.Date arg1, int arg2, string arg3);
+    public static java.util.Date addProvisionCount(java.util.Date arg1, int arg2, string arg3, string arg4);
+    public static string allowedMonths(int arg);
+    public static java.lang.Boolean areSameDatesDT(java.util.Date arg1, java.util.Date arg2);
+    public static boolean checkCoverageStartDate(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Boolean checkCoverageTenure(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Boolean checkDateFormat(string arg);
+    public static boolean checkDateValid(string arg);
+    public static java.lang.Boolean checkEndDateIsOpenEndDate(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Boolean checkForFullYearInPlanYears(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Boolean checkForShortened1stYear(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Boolean checkNxtDtForShortened1stYrEndDate(java.util.Date arg1, java.util.Date arg2);
+    public static boolean checkValidCalendarDate(string arg);
+    public static java.util.Date checkValidDate(string arg);
+    public static java.util.Date convertStringToDate(string arg);
+    public static java.util.Date convertStringToDateFormat(string arg);
+    public static java.util.Date convertStringToDateGeneric(string arg1, string arg2);
+    public static java.util.Date converttoUTCDate(java.util.Date arg);
+    public static java.util.Date currentDate();
+    public static int dateLength(java.util.Date arg);
+    public static boolean dayCheck(string arg);
+    public static java.util.Date firstDayOfFollowingMonth(java.util.Date arg);
+    public static java.util.Date firstDayOfPreviousMonth(java.util.Date arg);
+    public static string formatDateWithPattern(java.util.Date arg1, string arg2);
+    public static java.util.Date futureModifiedEffectiveDate(java.util.Date arg1, int arg2);
+    public static int getDateDifference(java.util.Date arg1, java.util.Date arg2);
+    public static int getDateDifferenceIncludingEndDate(java.util.Date arg1, java.util.Date arg2);
+    public static int getDifferenceInMinutes(java.util.Date arg1, java.util.Date arg2);
+    public static java.util.Date getEndDateForDefaultOpenEndDate(java.util.Date arg);
+    public static java.util.Date getEndDateForOpenEndDate(java.util.Date arg);
+    public static java.util.Date getEndOfYear();
+    public static java.lang.Boolean getFirstDateOfTheMonth(java.util.Date arg);
+    public static java.util.Map getFutureDate(java.util.Date arg1, java.util.Date arg2);
+    public static java.util.Map getFutureDateIfTerminated(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Boolean getLastDateOfTheMonth(java.util.Date arg);
+    public static int getMonthsDiffFromCurrentdate(java.util.Date arg);
+    public static int getMonthsDifference(java.util.Date arg);
+    public static java.util.Date getNewDateFromExpTermDate(java.util.Date arg);
+    public static java.util.Date getNextDayOfADate(java.util.Date arg);
+    public static boolean isBusinessDay(java.util.Date arg);
+    public static boolean isDateBetweenRange(string arg1, string arg2, string arg3);
+    public static boolean isDateBetweenTwoDates(string arg1, string arg2, string arg3);
+    public static boolean isEffectiveDateLessThanCurrentDate(java.util.Date arg);
+    public static boolean isHoliday(java.util.Date arg);
+    public static boolean isIncomingDateFutureDate(java.util.Date arg);
+    public static boolean isIncomingDatePastDate(java.util.Date arg);
+    public static boolean isInputDateFutureDate(java.util.Date arg);
+    public static boolean isValidDate(java.util.Date arg);
+    public static java.util.Date nextRenewalDateDate(java.util.Date arg);
+    public static string nextRenewalDateDateS(java.util.Date arg);
+    public static string paymentDays(int arg);
+    public static java.util.Date setInValdiateDateToNull();
+    public static java.util.Date setLastDateOfTheMonth(java.util.Date arg);
+    public static string setOEDate(java.util.Date arg1, int arg2);
+    public static java.util.Date setPreviousTermDate(java.util.Date arg1, int arg2);
+    public static java.util.Date subtractDaysFromADate(java.util.Date arg1, int arg2);
+    public static int theDayOfTheMonth(java.util.Date arg);
+    public static boolean timeRangeCheck(string arg1, string arg2, java.util.Date arg3)
+                throws java.text.ParseException;
+    public static boolean valdiateDateForWPA(java.util.Date arg);
+    public static java.util.Date validDateCheck(java.util.Date arg);
+}
+
+public final class POUtitlity
+{
+    public POUtitlity();
+    public static int calculateAge(java.util.Date arg);
+    public static java.lang.Integer convertStringToInteger(string arg);
+    public static java.lang.Integer getAge(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Integer getAgeOfMemeber(java.util.Date arg);
+    public static boolean isAlphaNumeric(string arg);
+    public static boolean isAlphaNumericWithSpace(string arg);
+    public static boolean isAlphaNumericWithatleastOneChar(string arg);
+    public static boolean isDoubleFieldNull(java.lang.Double arg);
+    public static boolean isNumeric(string arg);
+    public static boolean isPhoneNumberValid(string arg);
+    public static boolean isSSNValid(string arg);
+    public static java.lang.Boolean isValidDate(string arg1, java.util.Date arg2);
+    public static java.lang.Boolean isValidEmailAddress(string arg);
+    public static boolean isValidMiddleInitial(string arg);
+    public static boolean isValidName(string arg);
+    public static boolean isZipCodeValid(string arg);
+}
+
+public final class StringUtility
+{
+    public static string SPECIAL_CHAR_PRESENT_ERROR_MSG;
+    public StringUtility();
+    public static string IntegerToString(java.lang.Integer arg);
+    public static boolean compareStringIgnoringCase(string arg1, string arg2);
+    public static string concatenateWithDelimiter(string arg1, string arg2, string arg3);
+    public static boolean containsListEqualsIgnoreCase(string arg1, 
+        java.util.List arg2 domain 0,* class string);
+    public static int getStringLength(string arg);
+    public static int getStringLength(string arg1, boolean arg2);
+    public static boolean isDummySSN(string arg);
+    public static boolean isFourDigitLength(string arg);
+    public static boolean isNumeric(string arg);
+    public static boolean isSpecialCharactersPresent(string arg1, string arg2)
+                throws java.lang.Exception;
+    public static boolean isStringLowerCase(string arg);
+    public static boolean isValidMedicareId(string arg);
+    public static boolean isValidPhone(string arg);
+    public static boolean isValidZipCode(string arg);
+    public static string leaveAlphas(string arg);
+    public static string removeSpecialCharacters(string arg);
+    public static string removeSpecialCharactersAndSpace(string arg);
+    public static string stripSpaces(string arg);
+    public static string subStringWithStartEndPosition(string arg1, int arg2, int arg3);
+    public static string toLowerCase(string arg);
+    public static string toUpper(string arg);
+    public static string trimString(string arg1, int arg2);
+}
+
+public final class TrimUtility
+{
+    public TrimUtility();
+    public static object trimReflective(object arg)
+                throws java.lang.Exception;
+}
+
+package com.humana.odm.utility.exception.bo;
+
+
+public class TechnicalError
+{
+    public static final readonly java.util.Map technicalErrorCache;
+    public java.util.List technicalErrorList domain 0,* class string;
+    public TechnicalError();
+}
+
+package com.humana.odm.utility.sitescope;
+
+
+public class ApplicationUtility
+{
+    public ApplicationUtility();
+    public static boolean checkAndSetSiteScope(com.humana.odm.utility.sitescope.SitescopeMonitoring arg);
+    public static com.humana.odm.utility.sitescope.SitescopeMonitoring initiateSitescope(com.humana.odm.utility.sitescope.SitescopeMonitoring arg);
+}
+
+public class SitescopeMonitoring
+{
+    public boolean sitescopeMonitoringEnabled;
+    public string sitescopeMonitoringInput;
+    public SitescopeMonitoring();
+}
+

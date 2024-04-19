@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="PO_DEP_EnrollmentRuleApp" managingXom="true">
+  <eAnnotations source="ilog.rules.custom_properties">
+    <details key="Dep_Groups" value="rtsAdministrator,rtsConfigManager"/>
+    <details key="Dep_SnapshotCreationKind" value="NEVER"/>
+  </eAnnotations>
+  <name>CLOUD_QA_DIRECT</name>
+  <uuid>50a2c26f-516c-4d58-9c88-ad373955b66e</uuid>
+  <targets label="QA - BPIC RES"/>
+  <operations operationName="DEPEnrollmentValidationServiceOperation">
+    <operation href="DEPEnrollmentValidationServiceOperation.dop#0343b1c4-0215-4afc-9964-94c9675374a0"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+    <properties key="com.ibm.rules.engine.bytecode.generation">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="ruleset.trace.enabled">
+      <value><![CDATA[false]]></value>
+    </properties>
+    <properties key="ruleset.debug.enabled">
+      <value><![CDATA[false]]></value>
+    </properties>
+    <properties key="ruleset.status">
+      <value><![CDATA[enabled]]></value>
+    </properties>
+  </operations>
+  <versionPolicies label="Increment minor ruleset version" ruleset="INCREMENT_MINOR" ruleapp="INCREMENT_MINOR" default="true" recurrent="true">
+    <description><![CDATA[Updates the minor version for each ruleset. Makes the new version available but retains previous versions.]]></description>
+  </versionPolicies>
+  <versionPolicies label="Let me decide ruleset versions" ruleset="MANUAL" ruleapp="MANUAL" recurrent="true">
+    <description><![CDATA[Allows you to enter your own version numbers. Used for hot fixes or updates to an earlier release.]]></description>
+  </versionPolicies>
+  <versionPolicies label="Do no not change versions" recurrent="true">
+    <description><![CDATA[Replaces the latest version of each ruleset with this release. Used for hot fixes or development.]]></description>
+  </versionPolicies>
+</com.ibm.rules.studio.model.decisionservice:Deployment>

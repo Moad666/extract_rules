@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="PO_DEP_EnrollmentValidationDecisionService" usingRuleflow="true" ruleflowName="DEP Main Flow" usingExtractor="true" targetRuleProjectName="PO_DEP_EnrollmentValidationDecisionService">
+  <name>DEPEnrollmentValidationServiceOperation</name>
+  <uuid>0343b1c4-0215-4afc-9964-94c9675374a0</uuid>
+  <referencedVariables variableName="request" variableSetName="DEPVariableSet.var">
+    <variableSet href="../../PO_DEP_EnrollmentValidationBOM/rules/DEPVariableSet.var#bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+  </referencedVariables>
+  <referencedVariables variableName="response" variableSetName="DEPVariableSet.var" direction="OUT">
+    <variableSet href="../../PO_DEP_EnrollmentValidationBOM/rules/DEPVariableSet.var#bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+  </referencedVariables>
+  <referencedVariables variableName="executionPath" variableSetName="DEPVariableSet.var">
+    <variableSet href="../../PO_DEP_EnrollmentValidationBOM/rules/DEPVariableSet.var#bb1ed548-66cb-4343-a82d-ddcd890ae374"/>
+  </referencedVariables>
+  <referencedVariables variableName="technicalError" variableSetName="technicalError" direction="OUT">
+    <variableSet href="../../../BPIC.ODM.DS.DE.UTILITY/PO_ODM_Utility_BOM/rules/CommonUtilityVarSet.var#49bb3ae1-e873-4225-8b4c-068295b419a3"/>
+  </referencedVariables>
+  <ruleflow href="../rules/DEP%20Main%20Flow.rfl#403e4463-22f8-403b-bce2-cbf484319034"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="DEPEnrollmentValidationServiceOperation_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../PO_DEP_EnrollmentValidationDecisionService#d73ef128-9551-4c59-99d9-408beace3f0d"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <eAnnotations source="ilog.rules.custom_properties">
+    <details key="MedicareKey" value="MedicareValue"/>
+  </eAnnotations>
+  <name>Proposed Effective Date is not in ISO Format</name>
+  <uuid>361ae8fa-d77d-4f9a-9f69-b63ed02af56d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+    set 'Proposed Effective Date' to the application proposed effective date of the enrollment application submission of 'the odm consumer data request' ;
+    set 'Application Proposed Effective Date' to remove special characters and space ( 'Proposed Effective Date' ) ;
+if
+    'Application Proposed Effective Date' is not null
+    and 'Application Proposed Effective Date' is not empty
+    and ( Numeric validation of 'Application Proposed Effective Date' is true
+    and the length of String: 'Application Proposed Effective Date' is 8 )
+    and Date format check of 'Proposed Effective Date' is false
+then
+    add the error message with ruleset name - "MCARE Policy - Proposed Effective Date Basic" , issue code "P0000022" , action code "" , from value of 'Proposed Effective Date'  and to value of "" for the Proposed Effective Date issue of 'the odm consumer data response' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

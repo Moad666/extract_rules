@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Identifier Code is not MC</name>
+  <uuid>fd9e95d4-edca-47ab-aca4-49e434bf5f18</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+    set 'official identifier' to an official identifiers in the official identifiers of the consumers of 'the odm consumer data request' ;
+    set 'identifierCode' to the identifier code of 'official identifier' ;
+if
+    'identifierCode' is null
+    or 'identifierCode' is empty
+    or 'identifierCode' is not "MC"
+then
+    add the error message with ruleset name - "Official Identifiers - Medicare MBI" , issue code "P0000001" , action code "" , from value of identifierCode and to value of "" for the MBI issue of 'the odm consumer data response' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

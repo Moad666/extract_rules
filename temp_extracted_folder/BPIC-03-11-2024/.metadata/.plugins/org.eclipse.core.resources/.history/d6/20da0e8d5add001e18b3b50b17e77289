@@ -1,0 +1,202 @@
+package com.humana.bpic.DEPEnrollmentValidation.request;
+
+
+import java.util.List;
+
+public class Consumers {
+	private String prefix="";
+	private String firstName="";
+	private String middleName="";
+	private String middleInitial="";
+	private String lastName="";
+	private String suffix="";
+	private String dateOfBirthDate="";
+	private String sex="";
+	private Biometrics biometrics ;
+	private AdditionalDemographics additionalDemographics;
+	private List<OfficialIdentifiers> officialIdentifiers;
+	private List<InternalIdentifiers> internalIdentifiers;
+	private ContactInformation contactInformation;
+	private List<ExternalContacts> externalContacts;
+	private OtherInsurances otherInsurances;
+	private List<Plans> plans;
+	private List<OptionalSupplementalBenefits> optionalSupplementalBenefits;
+	private List<OtherCoverages> otherCoverages;
+	private List<Providers> providers;
+	private List<PaymentPreferences> paymentPreferences;
+	private CommunicationPreferences communicationPreferences;
+	private Conditions conditions;
+	private List<ChronicConditions> chronicConditions;
+	private LongTermCare longTermCare;
+	//Added below attributes on 11/03/2023 for the DEP_Iterarion3.4
+	private String deceasedDate="";
+	private List<Designees> designees; 
+	//Added below attribute on 01/30/2024 for the DEP_Iterarion4.4
+	private int age;
+	
+	public String getPrefix() {
+		return prefix;
+	}
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getMiddleName() {
+		return middleName;
+	}
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+	
+	public String getMiddleInitial() {
+		return middleInitial;
+	}
+	public void setMiddleInitial(String middleInitial) {
+		this.middleInitial = middleInitial;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getSuffix() {
+		return suffix;
+	}
+	public void setSuffix(String suffix) {
+		this.suffix = suffix;
+	}
+	public String getDateOfBirthDate() {
+		return dateOfBirthDate;
+	}
+	public void setDateOfBirthDate(String dateOfBirthDate) {
+		this.dateOfBirthDate = dateOfBirthDate;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public Biometrics getBiometrics() {
+		return biometrics;
+	}
+	public void setBiometrics(Biometrics biometrics) {
+		this.biometrics = biometrics;
+	}
+	public AdditionalDemographics getAdditionalDemographics() {
+		return additionalDemographics;
+	}
+	public void setAdditionalDemographics(AdditionalDemographics additionalDemographics) {
+		this.additionalDemographics = additionalDemographics;
+	}
+	public List<OfficialIdentifiers> getOfficialIdentifiers() {
+		return officialIdentifiers;
+	}
+	public void setOfficialIdentifiers(List<OfficialIdentifiers> officialIdentifiers) {
+		this.officialIdentifiers = officialIdentifiers;
+	}
+	public List<InternalIdentifiers> getInternalIdentifiers() {
+		return internalIdentifiers;
+	}
+	public void setInternalIdentifiers(List<InternalIdentifiers> internalIdentifiers) {
+		this.internalIdentifiers = internalIdentifiers;
+	}
+	public ContactInformation getContactInformation() {
+		return contactInformation;
+	}
+	public void setContactInformation(ContactInformation contactInformation) {
+		this.contactInformation = contactInformation;
+	}
+	public List<ExternalContacts> getExternalContacts() {
+		return externalContacts;
+	}
+	public void setExternalContacts(List<ExternalContacts> externalContacts) {
+		this.externalContacts = externalContacts;
+	}
+	public OtherInsurances getOtherInsurances() {
+		return otherInsurances;
+	}
+	public void setOtherInsurances(OtherInsurances otherInsurances) {
+		this.otherInsurances = otherInsurances;
+	}
+	public List<Plans> getPlans() {
+		return plans;
+	}
+	public void setPlans(List<Plans> plans) {
+		this.plans = plans;
+	}
+	public List<OptionalSupplementalBenefits> getOptionalSupplementalBenefits() {
+		return optionalSupplementalBenefits;
+	}
+	public void setOptionalSupplementalBenefits(List<OptionalSupplementalBenefits> optionalSupplementalBenefits) {
+		this.optionalSupplementalBenefits = optionalSupplementalBenefits;
+	}
+	public List<OtherCoverages> getOtherCoverages() {
+		return otherCoverages;
+	}
+	public void setOtherCoverages(List<OtherCoverages> otherCoverages) {
+		this.otherCoverages = otherCoverages;
+	}
+	public List<Providers> getProviders() {
+		return providers;
+	}
+	public void setProviders(List<Providers> providers) {
+		this.providers = providers;
+	}
+	public List<PaymentPreferences> getPaymentPreferences() {
+		return paymentPreferences;
+	}
+	public void setPaymentPreferences(List<PaymentPreferences> paymentPreferences) {
+		this.paymentPreferences = paymentPreferences;
+	}
+	public CommunicationPreferences getCommunicationPreferences() {
+		return communicationPreferences;
+	}
+	public void setCommunicationPreferences(CommunicationPreferences communicationPreferences) {
+		this.communicationPreferences = communicationPreferences;
+	}
+	public Conditions getConditions() {
+		return conditions;
+	}
+	public void setConditions(Conditions conditions) {
+		this.conditions = conditions;
+	}
+	public List<ChronicConditions> getChronicConditions() {
+		return chronicConditions;
+	}
+	public void setChronicConditions(List<ChronicConditions> chronicConditions) {
+		this.chronicConditions = chronicConditions;
+	}
+	public LongTermCare getLongTermCare() {
+		return longTermCare;
+	}
+	public void setLongTermCare(LongTermCare longTermCare) {
+		this.longTermCare = longTermCare;
+	}
+	public String getDeceasedDate() {
+		return deceasedDate;
+	}
+	public void setDeceasedDate(String deceasedDate) {
+		this.deceasedDate = deceasedDate;
+	}
+	public List<Designees> getDesignees() {
+		return designees;
+	}
+	public void setDesignees(List<Designees> designees) {
+		this.designees = designees;
+	}
+
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+	

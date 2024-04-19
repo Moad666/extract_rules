@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Date of Birth is not a Calendar Date</name>
+  <uuid>83b9b059-d83d-4b16-ae2a-3eaac55d99db</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+    set 'DOB' to the date of birth date of the consumers of 'the odm consumer data request' ;
+if
+    'DOB' is not null
+    and 'DOB' is not empty
+    and Date format check of 'DOB' is true
+    and check 'DOB' a valid date is false
+then
+    add the error message with ruleset name - "Demographics - DOB" , issue code "P0000013" , action code "" , from value of DOB  and to value of "" for the DOB issue of 'the odm consumer data response' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

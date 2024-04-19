@@ -1,0 +1,169 @@
+# Vocabulary Properties
+com.humana.nim.vitality.utility.DateUtility.getPlanYears(java.util.Date,java.util.Date)#phrase.navigation = date utility.getPlanYears({0}, {1})
+com.humana.nim.vitality.utility.POUtitlity.checkAddressType(java.util.List)#phrase.navigation = check Address Type of {0}
+com.humana.nim.vitality.utility.POUtitlity.checkPhoneType(java.util.List)#phrase.navigation = check Phone Type of {0}
+com.humana.nim.vitality.utility.POUtitlity.checkPrimaryEmail(java.util.List)#phrase.navigation = check Primary Email of {0}
+com.humana.nim.vitality.utility.POUtitlity.isDoubleFieldNull(double)#phrase.navigation = Null check of {0}
+com.humana.nim.vitality.utility.POUtitlity.isDuplicateTypeCheck(java.util.List)#phrase.navigation = POUtitlity.isDuplicateTypeCheck({0})
+com.humana.nim.vitality.utility.POUtitlity.isValidDivisionName(java.lang.String)#phrase.navigation = Division name validation of {0}
+com.humana.nim.vitality.utility.POUtitlity.isValidationFailed(java.util.List)#phrase.navigation = POUtitlity.isValidationFailed({0})
+com.humana.odm.utility.DateUtility.areSameDates(java.util.Date,java.util.Date)#phrase.navigation = date utility.areSameDates({0}, {1})
+com.humana.odm.utility.DateUtility.getDatefromDT(java.lang.Object)#phrase.navigation = convert {0} to date
+com.humana.odm.utility.DateUtility.setYearEndTermDate(java.util.Date)#phrase.navigation = the year end term date for {0}
+com.humana.odm.utility.POUtitlity.isAfterDateComparison(java.util.Date,java.util.Date)#phrase.navigation = Date Comparison: {1} is after {0}
+com.humana.odm.utility.POUtitlity.isBeforeDateComparison(java.util.Date,java.util.Date)#phrase.navigation = Date Comparison: {0} is before {1}
+com.humana.odm.utility.StringUtility.isValidPhoneOrSSN(java.lang.String)#phrase.navigation = {0} does not contain sequence
+uuid = 89f1262b-b163-4f39-b233-f0ca55d33c8b
+
+# com.humana.odm.utility.CommonUtility
+com.humana.odm.utility.CommonUtility#concept.label = common utility
+com.humana.odm.utility.CommonUtility.SetNullNumber(java.lang.Integer)#phrase.navigation = A Null Number {0}
+com.humana.odm.utility.CommonUtility.areEquals(java.lang.String,java.lang.String)#phrase.navigation = {0} equals to {1}
+com.humana.odm.utility.CommonUtility.calculateAge(java.util.Date)#phrase.navigation = the age as on today from {0}
+com.humana.odm.utility.CommonUtility.calculateAgeAtEffectiveDate(java.util.Date,java.util.Date)#phrase.navigation = the age calculated from {0} as on  {1}
+com.humana.odm.utility.CommonUtility.calculatePercentage(int,int)#phrase.navigation = percentage of {0} out of {1}
+com.humana.odm.utility.CommonUtility.currentDate()#phrase.navigation = todays date
+com.humana.odm.utility.CommonUtility.incrementNumber(int,int)#phrase.navigation = incrementNumber({0}, {1})
+com.humana.odm.utility.CommonUtility.isAlphaNumeric(java.lang.String)#phrase.navigation = {0} is alpha numeric
+com.humana.odm.utility.CommonUtility.isAlphabetic(java.lang.String)#phrase.navigation = {0} is alphabetic
+com.humana.odm.utility.CommonUtility.isBigDecimalZero(java.math.BigDecimal)#phrase.navigation = isBigDecimalZero({0})
+com.humana.odm.utility.CommonUtility.isEmailAddressValid(java.lang.String)#phrase.navigation = {0} is a valid email address
+com.humana.odm.utility.CommonUtility.isInteger(java.lang.Integer)#phrase.navigation = isInteger({0})
+com.humana.odm.utility.CommonUtility.isInteger(java.lang.String)#phrase.navigation = {0} contains number
+com.humana.odm.utility.CommonUtility.isNullNumber(java.lang.Integer)#phrase.navigation = {0} is number null
+com.humana.odm.utility.CommonUtility.isSpecialCharacters(java.lang.String)#phrase.navigation = does {0} contain special characters
+com.humana.odm.utility.CommonUtility.isThreeDigitAreaCodeValid(java.lang.String)#phrase.navigation = {0} is a valid  three digit area code
+com.humana.odm.utility.CommonUtility.isValidSSN(java.lang.String)#phrase.navigation = {0} is a valid SSN
+com.humana.odm.utility.CommonUtility.isValidUSStateCode(java.lang.String)#phrase.navigation = {0} is a valid US state code
+com.humana.odm.utility.CommonUtility.isValidZipCode(java.lang.String)#phrase.navigation = {0} is a valid zip code
+com.humana.odm.utility.CommonUtility.isWhiteSpace(java.lang.String)#phrase.navigation = isWhiteSpace({0})
+com.humana.odm.utility.CommonUtility.yearsOfService(java.util.Date)#phrase.navigation = years served based on {0}
+
+# com.humana.odm.utility.DateUtility
+com.humana.odm.utility.DateUtility#concept.label = date utility
+com.humana.odm.utility.DateUtility.DatetoString(java.util.Date)#phrase.navigation = DatetoString({0})
+com.humana.odm.utility.DateUtility.IsEffectiveEndDateOpenEnded(java.util.Date)#phrase.navigation = check open ended for {0}
+com.humana.odm.utility.DateUtility.OverrideFirstDayOfMonth(java.lang.String)#phrase.navigation = Override First Day Of Month of {0}
+com.humana.odm.utility.DateUtility.addBusinessDays(java.util.Date,int)#phrase.navigation = add {1} business days to {0}
+com.humana.odm.utility.DateUtility.addDaystoDate(java.util.Date,int)#phrase.navigation = add {1} days to the date {0}
+com.humana.odm.utility.DateUtility.addProvisionCount(java.util.Date,int,java.lang.String)#phrase.navigation = add {1} for {2} to the date {0}
+com.humana.odm.utility.DateUtility.addProvisionCount(java.util.Date,int,java.lang.String,java.lang.String)#phrase.navigation = add {1} for {2} to the date {0} with {3}
+com.humana.odm.utility.DateUtility.allowedMonths(int)#phrase.navigation = the allowed effective dates for {0}
+com.humana.odm.utility.DateUtility.areSameDatesDT(java.util.Date,java.util.Date)#phrase.navigation = {0} is same as {1}
+com.humana.odm.utility.DateUtility.checkCoverageStartDate(java.util.Date,java.util.Date)#phrase.navigation = date utility.checkCoverageStartDate({0}, {1})
+com.humana.odm.utility.DateUtility.checkCoverageTenure(java.util.Date,java.util.Date)#phrase.navigation = check Coverage Tenure {0} and {1}
+com.humana.odm.utility.DateUtility.checkDateFormat(java.lang.String)#phrase.navigation = Date format check of {0} 
+com.humana.odm.utility.DateUtility.checkDateValid(java.lang.String)#phrase.navigation = date utility.checkDateValid({0})
+com.humana.odm.utility.DateUtility.checkEndDateIsOpenEndDate(java.util.Date,java.util.Date)#phrase.navigation = check for OpenEndDate in {0} and {1}
+com.humana.odm.utility.DateUtility.checkForFullYearInPlanYears(java.util.Date,java.util.Date)#phrase.navigation = check for full year in {0}, {1} plan year
+com.humana.odm.utility.DateUtility.checkForShortened1stYear(java.util.Date,java.util.Date)#phrase.navigation = check for shortened 1st Year for {0} and {1}
+com.humana.odm.utility.DateUtility.checkNxtDtForShortened1stYrEndDate(java.util.Date,java.util.Date)#phrase.navigation = check next day for {0}, {1}
+com.humana.odm.utility.DateUtility.checkValidCalendarDate(java.lang.String)#phrase.navigation = check {0} a valid date
+com.humana.odm.utility.DateUtility.checkValidDate(java.lang.String)#phrase.navigation = date utility.checkValidDate({0})
+com.humana.odm.utility.DateUtility.convertStringToDateFormat(java.lang.String)#phrase.navigation = convert {0} to date
+com.humana.odm.utility.DateUtility.convertStringToDateGeneric(java.lang.String,java.lang.String)#phrase.navigation = convert the string date {0} to date with specified format {1}
+com.humana.odm.utility.DateUtility.converttoUTCDate(java.util.Date)#phrase.navigation = convert {0} to UTC date format
+com.humana.odm.utility.DateUtility.currentDate()#phrase.navigation = current date
+com.humana.odm.utility.DateUtility.dayCheck(java.lang.String)#phrase.navigation = date utility.dayCheck({0})
+com.humana.odm.utility.DateUtility.firstDayOfFollowingMonth(java.util.Date)#phrase.navigation = firstDayOfFollowingMonth({0})
+com.humana.odm.utility.DateUtility.firstDayOfPreviousMonth(java.util.Date)#phrase.navigation = date utility.firstDayOfPreviousMonth({0})
+com.humana.odm.utility.DateUtility.formatDateWithPattern(java.util.Date,java.lang.String)#phrase.navigation = date utility.formatDateWithPattern({0}, {1})
+com.humana.odm.utility.DateUtility.futureModifiedEffectiveDate(java.util.Date,int)#phrase.navigation = futureModifiedEffectiveDate({0}, {1})
+com.humana.odm.utility.DateUtility.getDateDifference(java.util.Date,java.util.Date)#phrase.navigation = date utility.getDateDifference({0}, {1})
+com.humana.odm.utility.DateUtility.getDateDifferenceIncludingEndDate(java.util.Date,java.util.Date)#phrase.navigation = difference in days between two dates {0} and {1} including end date
+com.humana.odm.utility.DateUtility.getDifferenceInMinutes(java.util.Date,java.util.Date)#phrase.navigation = the difference in minutes between {0} and {1}
+com.humana.odm.utility.DateUtility.getEndDateForDefaultOpenEndDate(java.util.Date)#phrase.navigation = date utility.getEndDateForDefaultOpenEndDate({0})
+com.humana.odm.utility.DateUtility.getEndOfYear()#phrase.navigation = the end of year
+com.humana.odm.utility.DateUtility.getFirstDateOfTheMonth(java.util.Date)#phrase.navigation = Is {0} first day of the month
+com.humana.odm.utility.DateUtility.getFutureDate(java.util.Date,java.util.Date)#phrase.navigation = date utility.getFutureDate({0}, {1})
+com.humana.odm.utility.DateUtility.getLastDateOfTheMonth(java.util.Date)#phrase.navigation = Is {0} last day of the month
+com.humana.odm.utility.DateUtility.getMonthsDiffFromCurrentdate(java.util.Date)#phrase.navigation = Months diff: {0} and current date
+com.humana.odm.utility.DateUtility.getMonthsDifference(java.util.Date)#phrase.navigation = getMonthsDifference({0})
+com.humana.odm.utility.DateUtility.getNewDateFromExpTermDate(java.util.Date)#phrase.navigation = next month plus one day from {0}
+com.humana.odm.utility.DateUtility.getNextDayOfADate(java.util.Date)#phrase.navigation = next day of {0}
+com.humana.odm.utility.DateUtility.isBusinessDay(java.util.Date)#phrase.navigation = {0} is a business day
+com.humana.odm.utility.DateUtility.isDateBetweenRange(java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = the day of {2} is between {0} and {1}
+com.humana.odm.utility.DateUtility.isDateBetweenTwoDates(java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = isDateBetweenTwoDates({0}, {1}, {2})
+com.humana.odm.utility.DateUtility.isEffectiveDateLessThanCurrentDate(java.util.Date)#phrase.navigation = isEffectiveDateLessThanCurrentDate({0})
+com.humana.odm.utility.DateUtility.isHoliday(java.util.Date)#phrase.navigation = {0} is a holiday
+com.humana.odm.utility.DateUtility.isIncomingDateFutureDate(java.util.Date)#phrase.navigation = {0} is future date
+com.humana.odm.utility.DateUtility.isIncomingDatePastDate(java.util.Date)#phrase.navigation = {0} is past date
+com.humana.odm.utility.DateUtility.isInputDateFutureDate(java.util.Date)#phrase.navigation = is {0} future date
+com.humana.odm.utility.DateUtility.isValidDate(java.util.Date)#phrase.navigation = {0} is a valid date
+com.humana.odm.utility.DateUtility.nextRenewalDateDate(java.util.Date)#phrase.navigation = the next renewal date of {0}
+com.humana.odm.utility.DateUtility.nextRenewalDateDateS(java.util.Date)#phrase.navigation = nextRenewalDateDateS({0})
+com.humana.odm.utility.DateUtility.paymentDays(int)#phrase.navigation = set allowed payment days to {0}
+com.humana.odm.utility.DateUtility.setInValdiateDateToNull()#phrase.navigation = null date
+com.humana.odm.utility.DateUtility.setLastDateOfTheMonth(java.util.Date)#phrase.navigation = the last date of the month for {0}
+com.humana.odm.utility.DateUtility.setOEDate(java.util.Date,int)#phrase.navigation = set  {0} to  {1} days prior
+com.humana.odm.utility.DateUtility.setPreviousTermDate(java.util.Date,int)#phrase.navigation = the previous term date for {0} minus {1} months
+com.humana.odm.utility.DateUtility.subtractDaysFromADate(java.util.Date,int)#phrase.navigation = set a date {1} days prior to {0}
+com.humana.odm.utility.DateUtility.theDayOfTheMonth(java.util.Date)#phrase.navigation = the day as on {0}
+com.humana.odm.utility.DateUtility.timeRangeCheck(java.lang.String,java.lang.String,java.util.Date)#phrase.navigation = the time of {2} is between {0} and {1}
+com.humana.odm.utility.DateUtility.valdiateDateForWPA(java.util.Date)#phrase.navigation = {0} is a invalid date for WPA
+com.humana.odm.utility.DateUtility.validDateCheck(java.util.Date)#phrase.navigation = validDateCheck({0})
+
+# com.humana.odm.utility.POUtitlity
+com.humana.odm.utility.POUtitlity#concept.label = POUtitlity
+com.humana.odm.utility.POUtitlity.calculateAge(java.util.Date)#phrase.navigation = calculate age from {0}
+com.humana.odm.utility.POUtitlity.convertStringToInteger(java.lang.String)#phrase.navigation = convert {0} to Integer
+com.humana.odm.utility.POUtitlity.getAge(java.util.Date,java.util.Date)#phrase.navigation = calculating age by subtracting birthday {1} from current date {0}
+com.humana.odm.utility.POUtitlity.getAgeOfMemeber(java.util.Date)#phrase.navigation = calculating age of member where birthday is {0}
+com.humana.odm.utility.POUtitlity.isAlphaNumeric(java.lang.String)#phrase.navigation = AlphaNumeric validation of {0}
+com.humana.odm.utility.POUtitlity.isAlphaNumericWithSpace(java.lang.String)#phrase.navigation = Special Characters validation of {0}
+com.humana.odm.utility.POUtitlity.isAlphaNumericWithatleastOneChar(java.lang.String)#phrase.navigation = Alphanumeric with atleast one character validation of {0}
+com.humana.odm.utility.POUtitlity.isDoubleFieldNull(java.lang.Double)#phrase.navigation = Empty check of {0}
+com.humana.odm.utility.POUtitlity.isNumeric(java.lang.String)#phrase.navigation = Numeric validation of {0}
+com.humana.odm.utility.POUtitlity.isPhoneNumberValid(java.lang.String)#phrase.navigation = validation of {0}
+com.humana.odm.utility.POUtitlity.isSSNValid(java.lang.String)#phrase.navigation = SSN Validation of {0}
+com.humana.odm.utility.POUtitlity.isValidDate(java.lang.String,java.util.Date)#phrase.navigation = Validation of Date: {1} as per Date Format {0}
+com.humana.odm.utility.POUtitlity.isValidEmailAddress(java.lang.String)#phrase.navigation = Character validation of Email Address: {0}
+com.humana.odm.utility.POUtitlity.isValidMiddleInitial(java.lang.String)#phrase.navigation = Character validation of middle initial: {0}
+com.humana.odm.utility.POUtitlity.isValidName(java.lang.String)#phrase.navigation = Character validation of {0}
+com.humana.odm.utility.POUtitlity.isZipCodeValid(java.lang.String)#phrase.navigation = Numeric validations of {0}
+
+# com.humana.odm.utility.StringUtility
+com.humana.odm.utility.StringUtility#concept.label = string utility
+com.humana.odm.utility.StringUtility.IntegerToString(java.lang.Integer)#phrase.navigation = IntegerToString({0})
+com.humana.odm.utility.StringUtility.SPECIAL_CHAR_PRESENT_ERROR_MSG#phrase.action = set the SPECIAL CHAR PRESENT ERROR MSG to {SPECIAL CHAR PRESENT ERROR MSG}
+com.humana.odm.utility.StringUtility.SPECIAL_CHAR_PRESENT_ERROR_MSG#phrase.navigation = the SPECIAL CHAR PRESENT ERROR MSG
+com.humana.odm.utility.StringUtility.compareStringIgnoringCase(java.lang.String,java.lang.String)#phrase.navigation = compare string {0} with {1} ignoring case
+com.humana.odm.utility.StringUtility.concatenateWithDelimiter(java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = concatenateWithDelimiter({0}, {1}, {2})
+com.humana.odm.utility.StringUtility.containsListEqualsIgnoreCase(java.lang.String,java.util.List)#phrase.navigation = string utility.containsListEqualsIgnoreCase({0}, {1})
+com.humana.odm.utility.StringUtility.getStringLength(java.lang.String)#phrase.navigation = the length of String: {0}
+com.humana.odm.utility.StringUtility.getStringLength(java.lang.String,boolean)#phrase.navigation = the length of {0} with spaces {1}
+com.humana.odm.utility.StringUtility.isDummySSN(java.lang.String)#phrase.navigation = is {0} a dummy ssn
+com.humana.odm.utility.StringUtility.isFourDigitLength(java.lang.String)#phrase.navigation = isFourDigitLength({0})
+com.humana.odm.utility.StringUtility.isNumeric(java.lang.String)#phrase.navigation = isNumeric({0})
+com.humana.odm.utility.StringUtility.isSpecialCharactersPresent(java.lang.String,java.lang.String)#phrase.navigation = is special characters present in attribure  {1} of {0}
+com.humana.odm.utility.StringUtility.isStringLowerCase(java.lang.String)#phrase.navigation = is {0} Lower Case
+com.humana.odm.utility.StringUtility.isValidMedicareId(java.lang.String)#phrase.navigation = Valid Medicare Id {0}
+com.humana.odm.utility.StringUtility.isValidPhone(java.lang.String)#phrase.navigation = is {0} a valid phone number
+com.humana.odm.utility.StringUtility.isValidZipCode(java.lang.String)#phrase.navigation = isValidZipCode({0})
+com.humana.odm.utility.StringUtility.leaveAlphas(java.lang.String)#phrase.navigation = remove non alphas ({0})
+com.humana.odm.utility.StringUtility.removeSpecialCharacters(java.lang.String)#phrase.navigation = remove special characters ({0})
+com.humana.odm.utility.StringUtility.removeSpecialCharactersAndSpace(java.lang.String)#phrase.navigation = remove special characters and space {0}
+com.humana.odm.utility.StringUtility.stripSpaces(java.lang.String)#phrase.navigation = trim spaces ({0})
+com.humana.odm.utility.StringUtility.subStringWithStartEndPosition(java.lang.String,int,int)#phrase.navigation = the substring of {0} with start position {1} and end position {2}
+com.humana.odm.utility.StringUtility.toLowerCase(java.lang.String)#phrase.navigation = LowerCase({0})
+com.humana.odm.utility.StringUtility.toUpper(java.lang.String)#phrase.navigation = convert {0}  to upper case
+com.humana.odm.utility.StringUtility.trimString(java.lang.String,int)#phrase.navigation = trim {0} to {1} characters
+
+# com.humana.odm.utility.TrimUtility
+com.humana.odm.utility.TrimUtility#concept.label = trim utility
+
+# com.humana.odm.utility.exception.bo.TechnicalError
+com.humana.odm.utility.exception.bo.TechnicalError#concept.label = technical error
+com.humana.odm.utility.exception.bo.TechnicalError.technicalErrorCache#phrase.navigation = the technical error cache
+
+# com.humana.odm.utility.sitescope.ApplicationUtility
+com.humana.odm.utility.sitescope.ApplicationUtility#concept.label = application utility
+com.humana.odm.utility.sitescope.ApplicationUtility.checkAndSetSiteScope(com.humana.odm.utility.sitescope.SitescopeMonitoring)#phrase.navigation = application utility.checkAndSetSiteScope({0})
+com.humana.odm.utility.sitescope.ApplicationUtility.initiateSitescope(com.humana.odm.utility.sitescope.SitescopeMonitoring)#phrase.navigation = application utility.initiateSitescope({0})
+
+# com.humana.odm.utility.sitescope.SitescopeMonitoring
+com.humana.odm.utility.sitescope.SitescopeMonitoring#concept.label = sitescope monitoring
+com.humana.odm.utility.sitescope.SitescopeMonitoring.sitescopeMonitoringEnabled#phrase.action = make it {sitescope monitoring enabled} that {this} is sitescope monitoring enabled
+com.humana.odm.utility.sitescope.SitescopeMonitoring.sitescopeMonitoringEnabled#phrase.navigation = {this} is sitescope monitoring enabled
+com.humana.odm.utility.sitescope.SitescopeMonitoring.sitescopeMonitoringInput#phrase.action = set the sitescope monitoring input of {this} to {sitescope monitoring input}
+com.humana.odm.utility.sitescope.SitescopeMonitoring.sitescopeMonitoringInput#phrase.navigation = {sitescope monitoring input} of {this}
